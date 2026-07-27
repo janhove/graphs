@@ -1,0 +1,25 @@
+# Second free assignment
+
+This dataset stems from a study by @Poarch2018. The authors investigated to what extent the knowledge and use of both a dialect and standard variety confers a boost in executive function/cognitive control similar to the purported "bilingual advantage" [see @Kirk2014]. Their subjects were Swabian - Standard German bilinguals and took part in two tasks tapping into their cognitive control: The flanker task and the Simon task. They also filled out a questionnaire on the basis of which their dialect and standard knowledge and use were assessed.
+
+The files `Poarch2018_long.csv` and `Poarch2018_wide.csv` contain the same data, but arranged slightly differently (so you can use whichever arrangement you find easiest to work with).
+
+`Poarch2018_long.csv` contains the following variables:
+
+* `Subject`: The participants' ID (arbitrary).
+* `Age`: Their age.
+* `Sex`
+* `Education`: Their level of education (larger number = higher degree).
+* `DominanceSwabian`: A measure constructed on the basis of the questionnaire. Positive values essentially mean that the participant uses Swabian more often than Standard German and feels more comfortable talking Swabian than Standard German. Negative values mean that Standard German is the dominant language. Values around 0 mean that the participant is equally at ease with Swabian and Standard German. Note that this is a continuous variables (i.e., 30 is more dominant in Swabian than 10).
+* `Task`: Whether the numbers in the next column concern the participants' performance on the flanker or on the Simon task.
+* `meanSpeedDifference`: The participants' performance on the cognitive task expressed in trials per second. Values closer to 0 are assumed to reflect greater cognitive control capacities.
+
+`Poarch2018_wide.csv` contains the following variables:
+
+* `Subject`, `Age`, `Sex`, `Education`, `DominanceSwabian`: as before.
+* `Flanker`: the participants' `meanSpeedDifference` on the Flanker task, expressed in trials per second.
+* `Simon`: the participants' `meanSpeedDifference` on the Simon task, expressed in trials per second.
+
+The authors were interested in knowing whether "balanced bidialectals" (= `DominanceSwabian` near 0) show greater cognitive control than non-balanced bidialects.
+
+**Your task:** Draw one or more graphs with which to answer their research question. Also hand in the compiled HTML report.

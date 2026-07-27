@@ -1,0 +1,51 @@
+--- 
+title: "Quantitative Methodology: Drawing plots"
+author: "Jan Vanhove\n(jan.vanhove@unifr.ch, https://janhove.github.io)"
+date: "Autumn 2025"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: ["bibliography.bib"]
+csl: ["unified-style-linguistics.csl"]
+biblio-style: unified
+link-citations: yes
+description: "Tutorials for the graphing assignments."
+output:
+  bookdown::gitbook:
+    highlight: pygments
+    df_print: paged
+---
+
+As part of the home assignments for the course *Quantitative Methodology*,
+you'll learn how to use **R** to draw informative graphs of data.
+This is a useful skill in its own right, but it should also help smoothe
+the learning curve if you ever decide to take a course in quantitative data
+analysis that uses R.
+
+Below you'll find some tips to help you get most out of these graphing assignments.
+
+# Tips {-}
+
+* You'll learn more if you **type** all the commands rather than just 
+copy-paste them from this site. After the first few weeks,
+the tutorials will contain some typos so that the commands
+won't work if you just copy-paste them.
+
+* If the software throws a bunch of errors at you, **fix the first error first**.
+Often, the errors following it are just the result of this first error.
+
+* If your code produces an error, first check out the [appendix][Common error sources in R]. 
+If that doesn't work, go through your code line by line and explain to 
+yourself out loud what your code is supposed to achieve and what each line 
+actually does. This process is known as
+[**rubber duck debugging**](https://rubberduckdebugging.com/) and it's highly effective.
+
+* If you still run into difficulties, reduce your code to the minimum amount of
+code that still produces the error. This helps you identify exactly _where_ 
+the error occurs, making it easier for others to help you rectify the error.
+When asking for help, share this **minimal example** and its output.
+
+* Above all, don't despair and **be patient with yourself**. My code rarely runs
+from the first go, it's just that after doing this for years, I can iron out
+the most common glitches pretty quickly. And should you ever be stuck on a problem
+for a couple of hours, go for a walk, run, ride, beer, or whatever else floats your
+boat and return to the problem with a clear head another time.

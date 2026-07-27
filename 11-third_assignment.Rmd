@@ -1,0 +1,34 @@
+# Third free assignment
+
+For the final plotting assignment, your task is to visualise the results from a study by @Gibson2017, _Don't underestimate the benefits of being misunderstood_. (I hate the title, but the topic's interesting, I think.) We'll focus on just their first experiment. In this experiment, they investigated how native speakers of English interpret sentences such as "The mother gave the candle to the daughter" (with the recipient as a prepositional object (PO)) and "The mother gave the daughter the candle" (with the recipient as an indirect object; the so-called double-object construction (DO)).
+
+In the experiment, the participants heard implausible spoken sentences, such as
+
+* The mother gave the daughter to the candle.
+* The mother gave the candle the daughter.
+
+Interpreted literally, these sentences are semantically implausible. But if listeners have reasons to suspect that the linguistic signal has been corrupted (e.g., because of bad acoustic conditions or because their interlocutor doesn't speak English well), they may tend to reinterpret such sentences more plausibly (i.e., _The mother gave the daughter the candle_ and _The mother gave the candle to the daughter_).
+
+Gibson et al. investigated 
+
+(a) if such reinterpretation does indeed occur, and 
+(b) if DO constructions are more readily reinterpreted as PO constructions than vice versa (for theoretical reasons we needn't concern ourselves with).
+
+To this end, each listener was assigned to one of two accent conditions: none vs. accent. In the "none" condition (sic.), the sentences were read in a North-American accent. In the "accent" condition they were read in either a Hindi or an Israeli accent.
+The sentences were recorded by two actors: Idan (Israeli and North-American) and Nezar (Hindi and North-American). So, to summarise:
+
+* 1/4 of participants heard sentences recorded by Idan in an Israeli accent.
+* 1/4 of participants heard sentences recorded by Idan in a North-American accent.
+* 1/4 of participants heard sentences recorded by Nizar in a Hindi accent.
+* 1/4 of participants heard sentences recorded by Nizar in a North-American accent.
+
+Each participant heard 10 implausible sentences per construction (DO or PO). Each sentence was followed by a comprehension question, the answer to which hinged on whether the listeners interpreted the sentence as a DO or PO sentence. The assumption is that listeners gave fewer correct responses when the sentences were read with a non-native accent, more so for DO sentences.
+
+**Your task:** Visualise these data to check whether this assumption is borne out. Hand in at most three graphs. Also hand in the compiled HTML report.
+
+
+I've prepared the data in three csv files. Depending on which graph(s) you'd like to draw, it'll be easier to work with one file than with another.
+
+* `Gibson2017_dopo_jv.csv`: The individual answers per participant. Because of data loss (see article), not all participants provided 10 responses.
+* `Gibson2017_dopo_perParticipant_long_jv.csv`: The proportion of correct (i.e., literal) responses per construction per participant. There are two rows for each participant: one contains the proportion of correct responses to the DO construction; the other to the PO construction.
+* `Gibson2017_dopo_perParticipant_wide_jv.csv`: The proportion of correct (i.e., literal) responses per construction per participant. There is just one row for each participant; the proportion of correct responses is shown in different columns depending on the construction.

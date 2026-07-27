@@ -1,0 +1,189 @@
+# Further resources {-}
+
+If you want to learn more about drawing graphs, check out @Healy2019 and @Wilke2019.
+Both books are freely available online:
+
+* https://socviz.co/
+* https://clauswilke.com/dataviz/
+
+You may also find the tutorials on https://github.com/janhove/DatasetsAndGraphs helpful.
+
+# Common error sources in R {-}
+
+## `object 'x' not found`
+
+You're trying to call an object
+that hasn't been loaded yet. This error 
+is commonly caused by typos.
+
+Example:
+
+```{r, error = TRUE}
+x <- c(1, 4, 5)
+mean(X)
+```
+
+You've created an object named `x`, but on the second line, you're trying
+to call an object named `X`  (capitalisation!).
+
+When in doubt, you can inspect the names of all objects currently loaded
+by running this command:
+
+```{r, eval = FALSE}
+ls()
+```
+
+## `could not find function 'x'`
+
+You're trying to run a function that doesn't exist or that requires you
+to load an extension package first. Check whether you've typed in its name
+correctly. If it's a function from an extension package, check if that package
+has been loaded.
+
+
+```{r, echo = FALSE}
+detach("package:tidyverse", unload=TRUE)
+detach("package:ggplot2", unload=TRUE)
+```
+
+Example:
+
+```{r, error = TRUE}
+ggplot(dat,
+       aes(x = predictor,
+           y = outcome)) +
+  geom_point()
+```
+
+You need to load `tidyverse` (or `ggplot2`) before you can use the
+`ggplot()` function.
+
+## `there is no package called 'x'`
+
+You're trying to load an extension package that hasn't been installed yet.
+
+Example:
+
+```{r, error = TRUE}
+library(ggjoy)
+```
+
+Install the package first:
+
+```{r, eval = FALSE}
+install.package("ggjoy")
+```
+
+## `unexpected symbol`
+
+Check if you've forgotton a comma or bracket somewhere, or if you've used
+a comma or bracket that shouldn't be there.
+
+Example:
+
+```{r, message = FALSE, error = TRUE}
+library(ggplot2)
+ggplot(data = iris
+       aes(x = Sepal.Width,
+           y = Sepal.Length)) +
+  geom_point()
+```
+
+This error is difficult to spot because the error message isn't too helpful:
+There is a missing comma at the end of line 2, after `iris`.
+
+Example:
+
+```{r, error = TRUE}
+ggplot(data = iris)
+       aes(x = Sepal.Width,
+           y = Sepal.Length)) +
+  geom_point()
+```
+
+The bracket after `iris` should be a comma.
+
+```{r, error = TRUE}
+ggplot(data = iris,
+       aes(x = Sepal.Width,
+           y = Sepal.Length))) +
+  geom_point()
+```
+
+Superfluous bracket at the end of line 3.
+
+## It doesn't work and there isn't even an error message
+
+You've probably missed a bracket.
+
+Example: The following command won't produce an error message, but no graphic either:
+
+<pre>
+> ggplot(data = iris,
++        aes(x = Sepal.Width,
++            y = Sepal.Length) +
++   geom_point()
++
+</pre>
+
+In the console, you'll see that there's a new line starting with `+`.
+This means that the previous command hasn't been completed yet:
+completed commands are followed by new lines starting with `>`.
+In this particular case, the malfunction is caused by a missing
+bracket on the third line. The last bracket on this line closes
+the command `aes(`, but you need a second bracket to close
+the command `ggplot(`.
+
+Here is another example of code that doesn't produce an error
+but that doesn't produce the desired graphic either:
+
+```{r, echo = FALSE}
+library(ggplot2)
+```
+
+
+```{r}
+ggplot(data = iris,
+       aes(x = Sepal.Width,
+           y = Sepal.Length))
+geom_point()
+```
+
+Reason: the `+` on line 3 is missing.
+
+## `object of type 'closure' is not subsettable`
+Ah, the quintessential R error message. It can be generated 
+in a number of ways, but you're probably accidentally treating
+a _function_ as a _variable_. Here's an example: Let's say you
+want to compute the mean of the numbers 200 and 800. One
+way to do so is like so:
+
+```{r}
+mean(c(200, 800))
+```
+
+However, if you've accidentally used square brackets, the error
+pops up:
+
+```{r, error = TRUE}
+mean[c(200, 800)]
+```
+
+What you're actually doing with the square brackets is reading
+out two values of `mean`, namely the 200th and 800th value it's holding.
+However, `mean` doesn't hold any values; it's a function, not a variable.
+
+To fix the problem, go through your code and check if you haven't mixed up
+square and round brackets.
+
+
+
+# Software versions {-}
+
+```{r, echo = FALSE}
+devtools::session_info()
+```
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`

@@ -1,0 +1,34 @@
+# First free assignment
+
+In the final plotting assignments, you won't follow some tutorial.
+Instead, you'll receive a dataset and a research question. 
+Your task is to draw a graph with which you can answer the research question. 
+You get to decide which graph you draw -- but don't choose your graph willy-nilly. 
+We'll discuss your graphs in class.
+
+The dataset for the first free assignment, `PortugueseHeritageLanguage.csv`, contains data from a project conducted at the Institute of Multilingualism. The project in question was a longitudinal one with three data collections that investigated (among other thing) the development of the narrative skills in Portuguese in children of Portuguese heritage living in German- and French-speaking Switzerland as well as in a comparison group of Portuguese children living in Portugal.
+
+The dataset contains the following pieces of information:
+
+* `VPNID`: The child's project ID. Each child occurs three times in the dataset (three data collections).
+* `NumberOfLanguages`: The number of languages the child speaks.
+* `InputPortugueseSchool`: How much Portuguese does the child speak in school? (questionnaire item, ranging from 0 to 100%)
+* `PortugueseFather`, `PortugueseMother`: How well do the child's father and mother speak Portuguese? (parents' self-assessment, ranging from 1 (worst) to 6 (best))
+* `PortugueseParents`: The sum of `PortugueseFather` and `PortugueseMother`.
+* `EducationFather`, `EducationMother`: A higher number reflects a higher level of parental education.
+* `EducationParents`: Sum of `EducationFather` and `EducationMother`.
+* `LanguageGroup`: `Bilingual group (French)` = Child of Portuguese heritage living in French-speaking Switzerland. `Bilingual group (German)` = Child of Portuguese heritage living in German-speaking Switzerland. `Control group Portuguese` = Child living in Portugal.
+* `BilingualControl`: `bilingual` = child living in Switzerland; `control` = child living in Portugal.
+* `RegionalLanguage`: `French` = French-speaking Switzerland, `German` = in German-speaking Switzerland, `Portuguese` = in Portugal.
+* `Time`: `T1`, `T2`, `T3` (first, second, third data collection)
+* `Result`: Assessment of the child's narrative skills in Portuguese at a given data collection.
+
+Several of these pieces information are mutually redudant: 
+The information contained in `RegionalLanguage` can be derived from `LanguageGroup` as well, for instance.
+Missing values and null responses were coded as `NA`.
+
+**Your task:** Draw a graph with which the following question can be answered: How do the narrative skills in Portuguese of children of Portuguese heritage living in German- and French-speaking Switzerland as well as of children living in Portugal develop from data collection 1 through 3?
+
+This is a pretty difficult assignment, so take your time. 
+Try out a couple of different graphs, and hand in the graph you think works best.
+Also hand in the compiled HTML report.

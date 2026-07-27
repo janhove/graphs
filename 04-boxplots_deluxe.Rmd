@@ -1,0 +1,120 @@
+# Boxplots deluxe
+
+## Goals
+
+1. You'll learn how to add the individual data points underlying a boxplot to this boxplot. This makes for more informative graphs, particularly for smallish datasets (up till 100--150 observations or so).
+2. To do this, we'll use a technique known as _jittering_ to make overlapping datapoints more visible.
+
+## Tutorial
+
+Plain boxplots are useful when 
+you want to get a quick idea of the distribution
+of the data in different groups (see last week).
+
+However, **identically looking boxplots can represent markedly different distributions!** 
+
+For this reason, it can be useful to draw boxplots
+that also show the _individual_ data points rather
+than merely the distribution's quartiles.
+Such visualisations are particularly useful
+when the dataset isn't prohibitively large,
+so that you can actually make out the different data points.
+
+In the following, I assume you'll work within your R project
+and that you have the `tidyverse` and `here` packages. Always
+use scripts rather than typing your commands directly to the prompt.
+
+1. Read in the dataset `VowelChoices_ij.csv` (see last week). 
+2. Draw the boxplot of last week's tutorial again.
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+d_box <- read_csv(here("data", "VowelChoices_ij.csv"))
+```
+
+```{r, fig.asp = 0.9, fig.width = 4}
+ggplot(data = d_box,
+       aes(x = LearningCondition, y = PropCorrect)) +
+  geom_boxplot() +
+  xlab("Learning condition") +
+  ylab("Proportion correct answers") +
+  theme_bw(12)
+```
+
+3. We can add another _layer_ to this graph by
+inserting the command `geom_point()` into the ggplot call. 
+`geom_point()` draws the data points as, well, points and doesn't summarise its quartiles like `geom_boxplot()` does. 
+Since we insert `geom_point()` _after_ `geom_boxplot()`, 
+these points will be plotted _on top of_ (rather than underneath) the boxplots.
+
+```{r, fig.asp = 0.9, fig.width = 4}
+ggplot(data = d_box,
+       aes(x = LearningCondition, y = PropCorrect)) +
+  geom_boxplot() +
+  geom_point() +    # draw individual data points
+  xlab("Learning condition") +
+  ylab("Proportion correct answers") +
+  theme_bw(12)
+```
+
+4. If you count the number of points in this graph, you'll notice that there are fewer points (28) than there were participants (80). 
+The reason is that several participants obtained the same result, and their data are plotted on top of each other. 
+For this reason, it makes sense to move the plotted points a bit apart (_jittering_). 
+Here we can move the points apart horizontally. 
+To do this, we need to specify the `position` parameter inside the `geom_point()` command.
+
+    + We can specify both `width` (horizontal jittering) and `height` (vertical jittering). Fiddle with the setting for `width` to see what happens if you change it. I'd leave the value for `height` set to 0 (= no vertical jittering) so that we don't depict proportions of, say, 0.24 as 0.28.
+    + Notice that I've additionally specified the `outlier.shape` parameter in the `geom_boxplot()` command as `NA` (_not available_). This prevents the `geom_boxplot()` command from plotting outlying data points so that these points aren't plotted twice (as part of the boxplot and as an individual data point).
+
+```{r, fig.asp = 0.9, fig.width = 4}
+ggplot(data = d_box,
+       aes(x = LearningCondition, 
+           y = PropCorrect)) +
+  geom_boxplot(outlier.shape = NA) + # don't plot outliers twice
+  geom_point(position = position_jitter(width = 0.2,   # horizontal jittering
+                                        height = 0)) + # but no vertical jittering
+  xlab("Learning condition") +
+  ylab("Proportion correct answers") +
+  theme_bw(12)
+```
+
+5. To make the individual data points more visually distinct, we can change the plotting symbol by changing the `shape` parameter. This overview shows which plotting symbols are available:
+
+```{r, echo = FALSE, fig.asp = 1/4}
+par(bty = "n", cex.lab = 0.6, mar = c(0, 0, 0, 0))
+plot(x = 0:25, y = rep(1.1, 26), pch = 0:25, 
+     yaxt = "n", ylab = "",
+     ylim = c(0.5, 1.5),
+     xaxt = "n", xlab = "shape")
+text(x = 0:25, y = rep(0.9, 26), labels = as.character(0:25))
+```
+
+Empty circles tend to work well (shape 1):
+
+```{r, fig.asp = 0.9, fig.width = 4}
+ggplot(data = d_box,
+       aes(x = LearningCondition, 
+           y = PropCorrect)) +
+  geom_boxplot(outlier.shape = NA) + 
+  geom_point(position = position_jitter(width = 0.2,   
+                                        height = 0), 
+             shape = 1) + #  1 = empty circles
+  xlab("Learning condition") +
+  ylab("Proportion correct answers") +
+  theme_bw(12)
+```
+
+(Shapes 21 through 25 resemble shapes 1 through 5, but they can be coloured in.)
+
+6. More info: https://janhove.github.io/posts/2016-06-21-drawing-a-boxplot/.
+
+## Exercise
+
+The dataset `Wagenmakers_Zeelenberg.csv` contains data from a study by  @Wagenmakers2016.^[https://osf.io/hgi2y/]
+In this experiment, participants were instructed to either `smile` or `pout` (`Condition`)
+as they judged the funniness of four cartoons on a 10-point scale (0--9).
+The mean rating per participant can be found in the creatively named column `MeanRating`.
+The research question was if smiling participants gave higher funniness ratings than pouting ones.
+
+**Your task:** In a new script, compute the number of participants in each condition as well as the mean `MeanRating` per condition. Also draw boxplots (with individual data points) on the basis of which this research question
+can be answered. Label your axes appropriately. Save a graph you're happy with
+using `ggsave()`. Submit both your graph and the compiled HTML report.

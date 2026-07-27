@@ -1,0 +1,122 @@
+# Reading in data and drawing a histogram
+
+## Goals
+
+1. You'll learn what CSV files are and how you can import them into `R`.
+2. You'll learn how to draw a histogram, which is a useful kind of graph for gauging how a variable is distributed.
+3. You'll learn how to label your graphs' axes.
+
+## Importing CSV files into R
+
+1. On Moodle you'll find a file named `Vanhove2015_Vpn.csv`. This file contains a couple of pieces of information about the participants in an experiment that I conducted several years ago: `ID`, scores on German, English and French vocabulary tests (`Wortschatz`, `Englisch` and `Französisch`, respectively), sex (`Geschlecht`), and age (`Alter`). Save the CSV file _directly_ to the `data` subdirectory in the R project directory that you created last week. Do _not_ open the file in Excel first to use its 'save as' function: On German- and French-language systems (among others), this tends to mess up the file's internal structure.
+2. Open the CSV file using a text editor (e.g., Windows' Wordpad, Gnu's gedit or macOS's TextEdit) and note how the file is structured: There are separate columns for each variable, and each line contains data for one participant only. Different values are separated by commas (hence _CSV_: comma-separated values).
+3. You can also open the CSV file in Excel, LibreOffice Calc or other spreadsheet software, but be careful not to use the 'save as' function unless you know what you're doing. If you use the 'save as' function in Excel on a non-English system, the commas will be replaced by semi-colons and chaos will ensue. (I prefer [LibreOffice Calc](https://www.libreoffice.org), which is free software and which allows you to save CSV files as, well, CSV files.)
+4. Open the R project that you created last week, e.g., by double-clicking the `.Rproj` file.
+5. Create a new script (`File > New File > R Script`).
+6. Type the commands for loading the `tidyverse` and `here` packages in this script and run them. (See last week.) Note that you do not have to _reinstall_ these packages; you just need to _load_ them.
+7. Add and run the following command. It reads in the CSV file `Vanhove2015_Vpn.csv` stored in the `data` subdirectory and assigns its contents to a new object that can be referred to in R as `d_hist`. You can pick another name, but then you'll have to make the necessary changes in the code that follows, too; I use `d_hist` because we're working with a *d*ataset and we're going to draw a *hist*ogram. The 'assignment operator' is an arrow made up from a less than sign (`<`) and a dash (`-`). (You can use the shortcurt alt + - on Windows/Linux or Option + - on Mac.) The output at the console is merely a message that tells you how the data were parsed: there is one column containing text (characters, `chr`) and four columns containing numeric information (in a double-precision floating-point format, hence `dbl` but that's not relevant now).
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+d_hist <- read_csv(here("data", "Vanhove2015_Vpn.csv"))
+```
+
+8. If you type in the name of the newly created object (viz., `d_hist`) to the R prompt, you'll see part of the dataset displayed. If you want to inspect the whole dataset, use the following command:
+
+```{r, eval = FALSE}
+view(d_hist)
+```
+
+9. If that worked, congratulations: You've successfully imported the data set. If not: Double-check your steps (including downloading the dataset). If it still doesn't work, upload the dataset as you've downloaded it as well as the R commands that you used to Moodle along with any error messages or warnings.
+
+## Drawing a histogram
+
+A histogram shows how a variable is distributed [see @Johnson2013]. Histograms are particularly useful to check if 
+there are any 'univariate' outliers (i.e., values that lie far from the bulk of the data if you consider only this one variable) and to see if the variable seems to be distributed approximately uniformly, normally, bimodally or more wonkily.
+
+Since you've already loaded the `tidyverse` and since you've already read in the data, we can start to draw some histograms.
+Like for last week's scatterplot, we need to define the object and the variables we want to plot (lines 1--2). Instead of drawing points, we draw a histogram:
+
+```{r}
+ggplot(data = d_hist,       # specify data set
+       aes(x = Englisch)) + # variable to be drawn
+  geom_histogram()          # draw as histogram
+```
+
+The histogram shows, among other things, that there are 8 individuals with an English vocabulary score just below 0.7 and 4 with a score just below 0.6. By default, 30 such _bins_ are drawn, but as the warning indicates ('Pick better value'), there's nothing special about this number. You can adjust the desired bin width:
+
+```{r}
+ggplot(data = d_hist,
+       aes(x = Englisch)) +
+  geom_histogram(binwidth = 0.2) # binwidth of 0.2 points
+```
+
+```{r}
+ggplot(data = d_hist,
+       aes(x = Englisch)) +
+  geom_histogram(binwidth = 0.1) # binwidth of 0.1 points
+```
+
+```{r}
+ggplot(data = d_hist,
+       aes(x = Englisch)) +
+  geom_histogram(binwidth = 0.05) # binwidth of 0.05 points
+```
+
+```{r}
+ggplot(data = d_hist,
+       aes(x = Englisch)) +
+  geom_histogram(binwidth = 1/30) # binwidth of 1/30 points
+```
+
+There aren't any hard and fast rules for determining the optimal bin width. The default settings (1st plot) produce a histogram that seems to be a bit too fine-grained, whereas a bin width of 0.2 (2nd plot) results in too coarse a histogram. The other three histograms seem fine by me; I'd probably pick the 4th or 5th for a presentation or when writing a paper.
+
+## Labelling axes
+
+Use `xlab()` and `ylab()` to label axes. Don't forget the quotation marks.
+
+```{r}
+ggplot(data = d_hist,
+       aes(x = Englisch)) +
+  geom_histogram(binwidth = 0.05) +
+  xlab("English vocabulary score") +
+  ylab("Number of participants")
+```
+
+Important:
+
+```{r, echo = FALSE, fig.cap = "Source: https://xkcd.com/833/."}
+knitr::include_graphics("https://imgs.xkcd.com/comics/convincing.png")
+```
+
+## Adjusting the colour scheme
+
+I've added two parameters to the `geom_histogram()` call
+to tweak the plot's appearance.
+You can change these settings yourself.
+
+```{r}
+ggplot(data = d_hist,
+       aes(x = Englisch)) +
+  geom_histogram(binwidth = 0.05,
+                 colour = "black",
+                 fill = "darkgrey") +
+  xlab("English vocabulary score") +
+  ylab("Number of participants")
+```
+
+Colours can be specified using their RGB code (e.g., `"#41AB4C"`, see https://htmlcolorcodes.com/) or using their R internal name.
+These internal names can be listed by typing the command `colors()` 
+at the R prompt.
+
+## Exercise
+
+1. Create  _one new_ script with which you draw a suitable histogram for the `Französisch` variable as well as for the `Wortschatz` variable. This will require you to tinker with the `binwidth` setting. Don't forget to adjust the axis labels. Use `ggsave()` (see last week) to save your preferred histogram for each of the two variables.
+
+2. Compile a HTML report.
+
+3. Hand in both the HTML report and the two figures via Moodle.
