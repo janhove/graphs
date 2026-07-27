@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Line charts | Quantitative Methodology: Drawing plots</title>
   <meta name="description" content="Tutorials for the graphing assignments." />
-  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Line charts | Quantitative Methodology: Drawing plots" />
   <meta property="og:type" content="book" />
@@ -56,6 +56,7 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -129,6 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -286,7 +288,7 @@ presented their results in four tables
 (Tables 4–7). I entered the results pertaining
 to the PPVT (English) and TVIP (Spanish) post-tests
 into a CSV file (<code>Peabody_Slavin2011.csv</code>):</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="line-charts.html#cb43-1" tabindex="-1"></a>slavin <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;Peabody_Slavin2011.csv&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="line-charts.html#cb33-1" tabindex="-1"></a>slavin <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;Peabody_Slavin2011.csv&quot;</span>))</span></code></pre></div>
 <ul>
 <li><code>Grade</code>: Grades 1 through 4.</li>
 <li><code>CourseType</code>: EI (English immersion) or TBE (transitional bilingual education).</li>
@@ -297,13 +299,13 @@ into a CSV file (<code>Peabody_Slavin2011.csv</code>):</p>
 </ul>
 <p>We can plot the development in the English and Spanish test scores
 for the two course types:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="line-charts.html#cb44-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> slavin,</span>
-<span id="cb44-2"><a href="line-charts.html#cb44-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Grade, </span>
-<span id="cb44-3"><a href="line-charts.html#cb44-3" tabindex="-1"></a>           <span class="at">y =</span> Mean,</span>
-<span id="cb44-4"><a href="line-charts.html#cb44-4" tabindex="-1"></a>           <span class="at">colour =</span> Language,        <span class="co"># use different colours per language</span></span>
-<span id="cb44-5"><a href="line-charts.html#cb44-5" tabindex="-1"></a>           <span class="at">linetype =</span> CourseType)) <span class="sc">+</span> <span class="co"># use different line types per course type</span></span>
-<span id="cb44-6"><a href="line-charts.html#cb44-6" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="co"># connect data points with a line</span></span>
-<span id="cb44-7"><a href="line-charts.html#cb44-7" tabindex="-1"></a>  <span class="fu">geom_point</span>()  <span class="co"># add data points as points for good measure</span></span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="line-charts.html#cb34-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> slavin,</span>
+<span id="cb34-2"><a href="line-charts.html#cb34-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Grade, </span>
+<span id="cb34-3"><a href="line-charts.html#cb34-3" tabindex="-1"></a>           <span class="at">y =</span> Mean,</span>
+<span id="cb34-4"><a href="line-charts.html#cb34-4" tabindex="-1"></a>           <span class="at">colour =</span> Language,        <span class="co"># use different colours per language</span></span>
+<span id="cb34-5"><a href="line-charts.html#cb34-5" tabindex="-1"></a>           <span class="at">linetype =</span> CourseType)) <span class="sc">+</span> <span class="co"># use different line types per course type</span></span>
+<span id="cb34-6"><a href="line-charts.html#cb34-6" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="co"># connect data points with a line</span></span>
+<span id="cb34-7"><a href="line-charts.html#cb34-7" tabindex="-1"></a>  <span class="fu">geom_point</span>()  <span class="co"># add data points as points for good measure</span></span></code></pre></div>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-35-1.png" alt="" width="384" /></p>
 <p>You should understand most of the R code above by now;
 if you don’t, please refer to the previous tutorials.
@@ -331,13 +333,13 @@ colours and linetypes any more. (But feel free to do so
 if you think it makes things clearer!) We need to quote the names
 of the variables according to which the facets are to be drawn
 in a <code>vars()</code> call.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="line-charts.html#cb45-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> slavin,</span>
-<span id="cb45-2"><a href="line-charts.html#cb45-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Grade,   </span>
-<span id="cb45-3"><a href="line-charts.html#cb45-3" tabindex="-1"></a>           <span class="at">y =</span> Mean)) <span class="sc">+</span> </span>
-<span id="cb45-4"><a href="line-charts.html#cb45-4" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb45-5"><a href="line-charts.html#cb45-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb45-6"><a href="line-charts.html#cb45-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(CourseType), <span class="co"># TBE vs. EI in rows; </span></span>
-<span id="cb45-7"><a href="line-charts.html#cb45-7" tabindex="-1"></a>             <span class="at">cols =</span> <span class="fu">vars</span>(Language))   <span class="co"># Span. vs. Eng. in columns</span></span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="line-charts.html#cb35-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> slavin,</span>
+<span id="cb35-2"><a href="line-charts.html#cb35-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Grade,   </span>
+<span id="cb35-3"><a href="line-charts.html#cb35-3" tabindex="-1"></a>           <span class="at">y =</span> Mean)) <span class="sc">+</span> </span>
+<span id="cb35-4"><a href="line-charts.html#cb35-4" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb35-5"><a href="line-charts.html#cb35-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb35-6"><a href="line-charts.html#cb35-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(CourseType), <span class="co"># TBE vs. EI in rows; </span></span>
+<span id="cb35-7"><a href="line-charts.html#cb35-7" tabindex="-1"></a>             <span class="at">cols =</span> <span class="fu">vars</span>(Language))   <span class="co"># Span. vs. Eng. in columns</span></span></code></pre></div>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-36-1.png" alt="" width="384" /></p>
 <p>Or you can combine facetting with using different colours or line types.
 In the next plot, the data for different languages are shown in separate
@@ -349,14 +351,14 @@ and English, we’d draw this graph the other way round.
 In addition to connecting the means with a line, this graph also visualises
 the means using a symbol in order to highlight that there were four discrete
 measurement times (i.e., no measurements between Grades 1 and 2).</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="line-charts.html#cb46-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> slavin,</span>
-<span id="cb46-2"><a href="line-charts.html#cb46-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Grade,</span>
-<span id="cb46-3"><a href="line-charts.html#cb46-3" tabindex="-1"></a>           <span class="at">y =</span> Mean,</span>
-<span id="cb46-4"><a href="line-charts.html#cb46-4" tabindex="-1"></a>           <span class="at">shape =</span> CourseType,       <span class="co"># different symbols by course type</span></span>
-<span id="cb46-5"><a href="line-charts.html#cb46-5" tabindex="-1"></a>           <span class="at">linetype =</span> CourseType)) <span class="sc">+</span></span>
-<span id="cb46-6"><a href="line-charts.html#cb46-6" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb46-7"><a href="line-charts.html#cb46-7" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb46-8"><a href="line-charts.html#cb46-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Language)) <span class="co"># only split graph by column (Sp. vs. Eng.)</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="line-charts.html#cb36-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> slavin,</span>
+<span id="cb36-2"><a href="line-charts.html#cb36-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Grade,</span>
+<span id="cb36-3"><a href="line-charts.html#cb36-3" tabindex="-1"></a>           <span class="at">y =</span> Mean,</span>
+<span id="cb36-4"><a href="line-charts.html#cb36-4" tabindex="-1"></a>           <span class="at">shape =</span> CourseType,       <span class="co"># different symbols by course type</span></span>
+<span id="cb36-5"><a href="line-charts.html#cb36-5" tabindex="-1"></a>           <span class="at">linetype =</span> CourseType)) <span class="sc">+</span></span>
+<span id="cb36-6"><a href="line-charts.html#cb36-6" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb36-7"><a href="line-charts.html#cb36-7" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb36-8"><a href="line-charts.html#cb36-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Language)) <span class="co"># only split graph by column (Sp. vs. Eng.)</span></span></code></pre></div>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-37-1.png" alt="" width="384" /></p>
 <p><strong>Brain-teaser:</strong>
 Why does the mean performance in Spanish get progressively worse as the children are getting older?
@@ -368,12 +370,12 @@ Why does the mean performance in Spanish get progressively worse as the children
 I’m sure you fondly remember your scatterplot from the
 first tutorial; here it is again but the different species
 are shown in separate panels:</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="line-charts.html#cb47-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
-<span id="cb47-2"><a href="line-charts.html#cb47-2" tabindex="-1"></a><span class="fu">ggplot</span>(iris,</span>
-<span id="cb47-3"><a href="line-charts.html#cb47-3" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Width,</span>
-<span id="cb47-4"><a href="line-charts.html#cb47-4" tabindex="-1"></a>           <span class="at">y =</span> Sepal.Length)) <span class="sc">+</span></span>
-<span id="cb47-5"><a href="line-charts.html#cb47-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb47-6"><a href="line-charts.html#cb47-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Species))</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="line-charts.html#cb37-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span>
+<span id="cb37-2"><a href="line-charts.html#cb37-2" tabindex="-1"></a><span class="fu">ggplot</span>(iris,</span>
+<span id="cb37-3"><a href="line-charts.html#cb37-3" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Width,</span>
+<span id="cb37-4"><a href="line-charts.html#cb37-4" tabindex="-1"></a>           <span class="at">y =</span> Sepal.Length)) <span class="sc">+</span></span>
+<span id="cb37-5"><a href="line-charts.html#cb37-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb37-6"><a href="line-charts.html#cb37-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Species))</span></code></pre></div>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-38-1.png" alt="" width="384" /></p>
 </div>
 <div id="for-those-interested" class="section level2 hasAnchor" number="5.4">
@@ -409,7 +411,7 @@ using <code>ggsave()</code>. Submit both your graph and the compiled HTML report
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Slavin2011" class="csl-entry">
 Slavin, Robert E., Nancy Madden, Malgarita Calderón, Anne Chamberlain &amp; Megan Hennessy. 2011. Reading and language outcomes of a multiyear randomized evaluation of transitional bilingual education. <em>Educational Evaluation and Policy Analysis</em> 33(1). 47–58. doi:<a href="https://doi.org/10.3102/0162373711398127">10.3102/0162373711398127</a>.
 </div>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Scatterplots with trend lines | Quantitative Methodology: Drawing plots</title>
   <meta name="description" content="Tutorials for the graphing assignments." />
-  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Scatterplots with trend lines | Quantitative Methodology: Drawing plots" />
   <meta property="og:type" content="book" />
@@ -56,6 +56,7 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -129,6 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -273,14 +275,14 @@ two variables using scatterplot smoothers.</p>
 </div>
 <div id="drawing-scatterplot-smoothers" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Drawing scatterplot smoothers<a href="scatterplots-with-trend-lines.html#drawing-scatterplot-smoothers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="scatterplots-with-trend-lines.html#cb73-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">dat =</span> per_part,</span>
-<span id="cb73-2"><a href="scatterplots-with-trend-lines.html#cb73-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> English.Total, </span>
-<span id="cb73-3"><a href="scatterplots-with-trend-lines.html#cb73-3" tabindex="-1"></a>           <span class="at">y =</span> number_correct)) <span class="sc">+</span></span>
-<span id="cb73-4"><a href="scatterplots-with-trend-lines.html#cb73-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb73-5"><a href="scatterplots-with-trend-lines.html#cb73-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span> <span class="co"># add smoother</span></span>
-<span id="cb73-6"><a href="scatterplots-with-trend-lines.html#cb73-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Result English test&quot;</span>) <span class="sc">+</span></span>
-<span id="cb73-7"><a href="scatterplots-with-trend-lines.html#cb73-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Numer of correct translations&quot;</span>) <span class="sc">+</span></span>
-<span id="cb73-8"><a href="scatterplots-with-trend-lines.html#cb73-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Mode))</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="scatterplots-with-trend-lines.html#cb63-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">dat =</span> per_part,</span>
+<span id="cb63-2"><a href="scatterplots-with-trend-lines.html#cb63-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> English.Total, </span>
+<span id="cb63-3"><a href="scatterplots-with-trend-lines.html#cb63-3" tabindex="-1"></a>           <span class="at">y =</span> number_correct)) <span class="sc">+</span></span>
+<span id="cb63-4"><a href="scatterplots-with-trend-lines.html#cb63-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb63-5"><a href="scatterplots-with-trend-lines.html#cb63-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span> <span class="co"># add smoother</span></span>
+<span id="cb63-6"><a href="scatterplots-with-trend-lines.html#cb63-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Result English test&quot;</span>) <span class="sc">+</span></span>
+<span id="cb63-7"><a href="scatterplots-with-trend-lines.html#cb63-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Numer of correct translations&quot;</span>) <span class="sc">+</span></span>
+<span id="cb63-8"><a href="scatterplots-with-trend-lines.html#cb63-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Mode))</span></code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~
 ## x&#39;</code></pre>
 <pre><code>## Warning: Removed 6 rows containing non-finite outside the scale
@@ -296,14 +298,14 @@ Of course, you can change the colour of the line to suit
 your personal taste, and you can turn off the grey ribbon (<code>se = FALSE</code>; <code>se</code> is short for ‘standard error’, which is unfortunate – standard errors and confidence bands aren’t the same thing).
 We’re going to turn off the confidence band because it’s bound to be misinterpreted
 anyway.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="scatterplots-with-trend-lines.html#cb77-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">dat =</span> per_part,</span>
-<span id="cb77-2"><a href="scatterplots-with-trend-lines.html#cb77-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> English.Total, </span>
-<span id="cb77-3"><a href="scatterplots-with-trend-lines.html#cb77-3" tabindex="-1"></a>           <span class="at">y =</span> number_correct)) <span class="sc">+</span></span>
-<span id="cb77-4"><a href="scatterplots-with-trend-lines.html#cb77-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb77-5"><a href="scatterplots-with-trend-lines.html#cb77-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb77-6"><a href="scatterplots-with-trend-lines.html#cb77-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Result English test&quot;</span>) <span class="sc">+</span></span>
-<span id="cb77-7"><a href="scatterplots-with-trend-lines.html#cb77-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Numer of correct translations&quot;</span>) <span class="sc">+</span></span>
-<span id="cb77-8"><a href="scatterplots-with-trend-lines.html#cb77-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Mode))</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="scatterplots-with-trend-lines.html#cb67-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">dat =</span> per_part,</span>
+<span id="cb67-2"><a href="scatterplots-with-trend-lines.html#cb67-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> English.Total, </span>
+<span id="cb67-3"><a href="scatterplots-with-trend-lines.html#cb67-3" tabindex="-1"></a>           <span class="at">y =</span> number_correct)) <span class="sc">+</span></span>
+<span id="cb67-4"><a href="scatterplots-with-trend-lines.html#cb67-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb67-5"><a href="scatterplots-with-trend-lines.html#cb67-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb67-6"><a href="scatterplots-with-trend-lines.html#cb67-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Result English test&quot;</span>) <span class="sc">+</span></span>
+<span id="cb67-7"><a href="scatterplots-with-trend-lines.html#cb67-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Numer of correct translations&quot;</span>) <span class="sc">+</span></span>
+<span id="cb67-8"><a href="scatterplots-with-trend-lines.html#cb67-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Mode))</span></code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~
 ## x&#39;</code></pre>
 <pre><code>## Warning: Removed 6 rows containing non-finite outside the scale

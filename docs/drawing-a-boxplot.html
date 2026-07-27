@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Drawing a boxplot | Quantitative Methodology: Drawing plots</title>
   <meta name="description" content="Tutorials for the graphing assignments." />
-  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Drawing a boxplot | Quantitative Methodology: Drawing plots" />
   <meta property="og:type" content="book" />
@@ -56,6 +56,7 @@
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -129,6 +130,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -342,11 +344,11 @@ You already know how the first three lines work;
 the fourth specifies that the data should be plotted
 using boxplots.</li>
 </ol>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="drawing-a-boxplot.html#cb33-1" tabindex="-1"></a><span class="co"># Boxplot PropCorrect vs. LearningCondition</span></span>
-<span id="cb33-2"><a href="drawing-a-boxplot.html#cb33-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,              </span>
-<span id="cb33-3"><a href="drawing-a-boxplot.html#cb33-3" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
-<span id="cb33-4"><a href="drawing-a-boxplot.html#cb33-4" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span>    </span>
-<span id="cb33-5"><a href="drawing-a-boxplot.html#cb33-5" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()                  <span class="co"># summarise data with boxplots</span></span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="drawing-a-boxplot.html#cb23-1" tabindex="-1"></a><span class="co"># Boxplot PropCorrect vs. LearningCondition</span></span>
+<span id="cb23-2"><a href="drawing-a-boxplot.html#cb23-2" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,              </span>
+<span id="cb23-3"><a href="drawing-a-boxplot.html#cb23-3" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
+<span id="cb23-4"><a href="drawing-a-boxplot.html#cb23-4" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span>    </span>
+<span id="cb23-5"><a href="drawing-a-boxplot.html#cb23-5" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()                  <span class="co"># summarise data with boxplots</span></span></code></pre></div>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-22-1.png" alt="" width="672" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Label the <em>x</em>-axis as “Learning condition” and the <em>y</em>-axis as “Proportion correct answers”. I don’t provide the commands for doing so; you already know them from last week.</li>
@@ -360,30 +362,30 @@ using boxplots.</li>
 This can be changed by appending the command <code>theme_bw()</code> (<em>black and white</em>)
 to the <code>ggplot</code> call:</li>
 </ol>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="drawing-a-boxplot.html#cb34-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,           </span>
-<span id="cb34-2"><a href="drawing-a-boxplot.html#cb34-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
-<span id="cb34-3"><a href="drawing-a-boxplot.html#cb34-3" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span>    </span>
-<span id="cb34-4"><a href="drawing-a-boxplot.html#cb34-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span>               </span>
-<span id="cb34-5"><a href="drawing-a-boxplot.html#cb34-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span>          </span>
-<span id="cb34-6"><a href="drawing-a-boxplot.html#cb34-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb34-7"><a href="drawing-a-boxplot.html#cb34-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="drawing-a-boxplot.html#cb24-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,           </span>
+<span id="cb24-2"><a href="drawing-a-boxplot.html#cb24-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
+<span id="cb24-3"><a href="drawing-a-boxplot.html#cb24-3" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span>    </span>
+<span id="cb24-4"><a href="drawing-a-boxplot.html#cb24-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span>               </span>
+<span id="cb24-5"><a href="drawing-a-boxplot.html#cb24-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span>          </span>
+<span id="cb24-6"><a href="drawing-a-boxplot.html#cb24-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb24-7"><a href="drawing-a-boxplot.html#cb24-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-23-1.png" alt="" width="672" /></p>
 <p>For other options, see <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="uri">https://ggplot2.tidyverse.org/reference/ggtheme.html</a>.</p>
 <ol start="2" style="list-style-type: decimal">
 <li>To change the font size, insert a number between the brackets of the <code>theme_bw()</code> command. Finding a suitable font size is a matter of trial and error.</li>
 </ol>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="drawing-a-boxplot.html#cb35-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,           </span>
-<span id="cb35-2"><a href="drawing-a-boxplot.html#cb35-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
-<span id="cb35-3"><a href="drawing-a-boxplot.html#cb35-3" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span>    </span>
-<span id="cb35-4"><a href="drawing-a-boxplot.html#cb35-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span>               </span>
-<span id="cb35-5"><a href="drawing-a-boxplot.html#cb35-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span>          </span>
-<span id="cb35-6"><a href="drawing-a-boxplot.html#cb35-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb35-7"><a href="drawing-a-boxplot.html#cb35-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">15</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="drawing-a-boxplot.html#cb25-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,           </span>
+<span id="cb25-2"><a href="drawing-a-boxplot.html#cb25-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
+<span id="cb25-3"><a href="drawing-a-boxplot.html#cb25-3" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span>    </span>
+<span id="cb25-4"><a href="drawing-a-boxplot.html#cb25-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span>               </span>
+<span id="cb25-5"><a href="drawing-a-boxplot.html#cb25-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span>          </span>
+<span id="cb25-6"><a href="drawing-a-boxplot.html#cb25-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb25-7"><a href="drawing-a-boxplot.html#cb25-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">15</span>)</span></code></pre></div>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-24-1.png" alt="" width="672" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>When you’re happy with a plot, you can save it using <code>ggsave()</code>. You can set the width and height of the figure using the <code>width</code> and <code>height</code> parameters, e.g.,</li>
 </ol>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="drawing-a-boxplot.html#cb36-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">&quot;figures&quot;</span>, <span class="st">&quot;03_boxplot.png&quot;</span>), <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="drawing-a-boxplot.html#cb26-1" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">&quot;figures&quot;</span>, <span class="st">&quot;03_boxplot.png&quot;</span>), <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">4</span>)</span></code></pre></div>
 <p>Per default, the width and height numbers are in inches. See the help page (<a href="https://ggplot2.tidyverse.org/reference/ggsave.html" class="uri">https://ggplot2.tidyverse.org/reference/ggsave.html</a>) on how to override this.</p>
 </div>
 <div id="computing-summaries" class="section level2 hasAnchor" number="3.5">
@@ -405,9 +407,9 @@ be read as follows:</p>
 <li><em>and compute the mean of <code>PropCorrect</code> and store it as <code>mean_PropCorrect</code>.</em></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="drawing-a-boxplot.html#cb37-1" tabindex="-1"></a>d_box <span class="sc">|&gt;</span> </span>
-<span id="cb37-2"><a href="drawing-a-boxplot.html#cb37-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">number =</span> <span class="fu">n</span>(),</span>
-<span id="cb37-3"><a href="drawing-a-boxplot.html#cb37-3" tabindex="-1"></a>            <span class="at">mean_PropCorrect =</span> <span class="fu">mean</span>(PropCorrect))</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="drawing-a-boxplot.html#cb27-1" tabindex="-1"></a>d_box <span class="sc">|&gt;</span> </span>
+<span id="cb27-2"><a href="drawing-a-boxplot.html#cb27-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">number =</span> <span class="fu">n</span>(),</span>
+<span id="cb27-3"><a href="drawing-a-boxplot.html#cb27-3" tabindex="-1"></a>            <span class="at">mean_PropCorrect =</span> <span class="fu">mean</span>(PropCorrect))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["number"],"name":[1],"type":["int"],"align":["right"]},{"label":["mean_PropCorrect"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"80","2":"0.3684524"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -426,9 +428,9 @@ as</p>
 <li><em>the mean of the <code>PropCorrect</code> variable.</em></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="drawing-a-boxplot.html#cb38-1" tabindex="-1"></a>d_box <span class="sc">|&gt;</span> </span>
-<span id="cb38-2"><a href="drawing-a-boxplot.html#cb38-2" tabindex="-1"></a>  <span class="fu">group_by</span>(LearningCondition) <span class="sc">|&gt;</span> </span>
-<span id="cb38-3"><a href="drawing-a-boxplot.html#cb38-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_PropCorrect =</span> <span class="fu">mean</span>(PropCorrect))</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="drawing-a-boxplot.html#cb28-1" tabindex="-1"></a>d_box <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a href="drawing-a-boxplot.html#cb28-2" tabindex="-1"></a>  <span class="fu">group_by</span>(LearningCondition) <span class="sc">|&gt;</span> </span>
+<span id="cb28-3"><a href="drawing-a-boxplot.html#cb28-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_PropCorrect =</span> <span class="fu">mean</span>(PropCorrect))</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["LearningCondition"],"name":[1],"type":["chr"],"align":["left"]},{"label":["mean_PropCorrect"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"<ij> participants","2":"0.4363234"},{"1":"<oe> participants","2":"0.2895753"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -462,7 +464,7 @@ in question was able to translate at least one profile word correctly (<code>yes
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Vanhove2014" class="csl-entry">
 Vanhove, Jan. 2014. Receptive multilingualism across the lifespan: Cognitive and linguistic factors in cognate guessing. University of Fribourg PhD thesis. <a href="http://doc.rero.ch/record/210293">http://doc.rero.ch/record/210293</a>.
 </div>

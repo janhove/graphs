@@ -108,7 +108,7 @@ appear at the prompt.
 # (Lines prefaced with hashes serve as comments -- use them liberally at first)
 library(tidyverse)
 
-# Load here package
+# Load here package -- this'll display a different path for you
 library(here)
 ```
 
@@ -184,7 +184,7 @@ in which the `Petal.Width` variable from the `iris`dataset is plotting
 along the _x_-axis and the `Sepal.Width` variable is plotted along the _y_-axis.
 You don't have to reinstall all the packages again, 
 but you will need to _load_ them.
-So do not include the `install.packages()' commands, but do include
+So do not include the `install.packages()` commands, but do include
 the `library()` commands in your script.
 Emulate the coding style used in this tutorial (i.e., mind spaces and indentation).
 Give the script and the figure sensible names (something starting with `01_` would be good; use `02_`, `03_` etc. in the following weeks), and save them to the appropriate subdirectories.
