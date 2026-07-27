@@ -176,7 +176,7 @@ drawn using `ggplot()`; it won't work for figures drawn in base R.
 devtools::session_info()
 ```
 
-6. Click `File > Compile Report...`. Select HTML and store the script in the `scripts` directory as `01_first_scatterplot.R`. If you've followed this tutorial to the letter, you will now find both an `.R` file and a corresponding `.html` file in your script directory. The `.R` file contains the command that you used to draw the plot, and the `.html` report nicely keeps track of both the commands and their output. If the report compiles without hiccoughs, anyone with the same data and the same software versions will be able to **reproduce** your analysis.
+7. Click `File > Compile Report...`. Select HTML and store the script in the `scripts` directory as `01_first_scatterplot.R`. If you've followed this tutorial to the letter, you will now find both an `.R` file and a corresponding `.html` file in your script directory. The `.R` file contains the command that you used to draw the plot, and the `.html` report nicely keeps track of both the commands and their output. If the report compiles without hiccoughs, anyone with the same data and the same software versions will be able to **reproduce** your analysis.
 
 ## Exercise
 1. Create a _new_ script with which you draw a scatterplot

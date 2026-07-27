@@ -153,7 +153,9 @@ to the way plots are constructed in `ggplot2`, so hopefully it's easy to
 pick up.
 
 First, let's compute the number of observations in the `d_box` dataset
-as well as the mean of the `PropCorrect` variable. The code below can
+as well as the mean of the `PropCorrect` variable. 
+The _pipe_ (`|>`) takes the object to its left and feeds it to the function
+to its right (or below). The code below can
 be read as follows: 
 
 * _Take `d_box`, THEN_

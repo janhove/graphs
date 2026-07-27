@@ -71,7 +71,7 @@ library(ggjoy)
 Install the package first:
 
 ```{r, eval = FALSE}
-install.package("ggjoy")
+install.packages("ggjoy")
 ```
 
 ## `unexpected symbol`

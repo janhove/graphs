@@ -397,7 +397,9 @@ and computing summaries is no exception. The alternative shown here is similar
 to the way plots are constructed in <code>ggplot2</code>, so hopefully it’s easy to
 pick up.</p>
 <p>First, let’s compute the number of observations in the <code>d_box</code> dataset
-as well as the mean of the <code>PropCorrect</code> variable. The code below can
+as well as the mean of the <code>PropCorrect</code> variable.
+The <em>pipe</em> (<code>|&gt;</code>) takes the object to its left and feeds it to the function
+to its right (or below). The code below can
 be read as follows:</p>
 <ul>
 <li><em>Take <code>d_box</code>, THEN</em></li>
