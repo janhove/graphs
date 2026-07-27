@@ -1,7 +1,7 @@
 --- 
 title: "Quantitative Methodology: Drawing plots"
 author: "Jan Vanhove\n(jan.vanhove@unifr.ch, https://janhove.github.io)"
-date: "Autumn 2025"
+date: "Autumn 2026"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["bibliography.bib"]
@@ -43,6 +43,7 @@ actually does. This process is known as
 code that still produces the error. This helps you identify exactly _where_ 
 the error occurs, making it easier for others to help you rectify the error.
 When asking for help, share this **minimal example** and its output.
+Though, of course, large language models can help you with this, too.
 
 * Above all, don't despair and **be patient with yourself**. My code rarely runs
 from the first go, it's just that after doing this for years, I can iron out
