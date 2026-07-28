@@ -5,6 +5,7 @@ goals
 software
 drawing-a-first-scatterplot
 exercise
+documentation
 reading-in-data-and-drawing-a-histogram
 goals-1
 importing-csv-files-into-r

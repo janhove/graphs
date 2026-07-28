@@ -15,13 +15,16 @@ output:
     df_print: paged
 ---
 
+# Overarching goal {-}
+
 As part of the home assignments for the course *Quantitative Methodology*,
 you'll learn how to use **R** to draw informative graphs of data.
 This is a useful skill in its own right, but it should also help smoothe
 the learning curve if you ever decide to take a course in quantitative data
 analysis that uses R.
 
-Below you'll find some tips to help you get most out of these graphing assignments.
+On the next page, you'll find some tips to help 
+you get most out of these graphing assignments.
 
 # Tips {-}
 
@@ -44,6 +47,10 @@ code that still produces the error. This helps you identify exactly _where_
 the error occurs, making it easier for others to help you rectify the error.
 When asking for help, share this **minimal example** and its output.
 Though, of course, large language models can help you with this, too.
+
+* If using large language models for debugging or generating code,
+try to understand what the problem was, how the solution works,
+and how the solution can be improved further.
 
 * Above all, don't despair and **be patient with yourself**. My code rarely runs
 from the first go, it's just that after doing this for years, I can iron out

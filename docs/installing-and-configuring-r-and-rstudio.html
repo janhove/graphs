@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
+<link rel="prev" href="tips.html"/>
 <link rel="next" href="reading-in-data-and-drawing-a-histogram.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -165,13 +165,15 @@ div.csl-indent {
 <li><a href="./">Quantitative Methodology</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Tips</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overarching goal</a></li>
+<li class="chapter" data-level="" data-path="tips.html"><a href="tips.html"><i class="fa fa-check"></i>Tips</a></li>
 <li class="chapter" data-level="1" data-path="installing-and-configuring-r-and-rstudio.html"><a href="installing-and-configuring-r-and-rstudio.html"><i class="fa fa-check"></i><b>1</b> Installing and configuring R and RStudio</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="installing-and-configuring-r-and-rstudio.html"><a href="installing-and-configuring-r-and-rstudio.html#goals"><i class="fa fa-check"></i><b>1.1</b> Goals</a></li>
 <li class="chapter" data-level="1.2" data-path="installing-and-configuring-r-and-rstudio.html"><a href="installing-and-configuring-r-and-rstudio.html#software"><i class="fa fa-check"></i><b>1.2</b> Software</a></li>
 <li class="chapter" data-level="1.3" data-path="installing-and-configuring-r-and-rstudio.html"><a href="installing-and-configuring-r-and-rstudio.html#drawing-a-first-scatterplot"><i class="fa fa-check"></i><b>1.3</b> Drawing a first scatterplot</a></li>
 <li class="chapter" data-level="1.4" data-path="installing-and-configuring-r-and-rstudio.html"><a href="installing-and-configuring-r-and-rstudio.html#exercise"><i class="fa fa-check"></i><b>1.4</b> Exercise</a></li>
+<li class="chapter" data-level="1.5" data-path="installing-and-configuring-r-and-rstudio.html"><a href="installing-and-configuring-r-and-rstudio.html#documentation"><i class="fa fa-check"></i><b>1.5</b> Documentation</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="reading-in-data-and-drawing-a-histogram.html"><a href="reading-in-data-and-drawing-a-histogram.html"><i class="fa fa-check"></i><b>2</b> Reading in data and drawing a histogram</a>
 <ul>
@@ -279,10 +281,10 @@ div.csl-indent {
 <div id="software" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Software<a href="installing-and-configuring-r-and-rstudio.html#software" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
-<li>Download the free program <code>R</code> from <a href="https://r-project.org" class="uri">https://r-project.org</a> (Download, CRAN) and install it. In case you already had R installed before taking this course, please check that you have at least version 4.3.1.</li>
+<li>Download the free program <code>R</code> from <a href="https://r-project.org" class="uri">https://r-project.org</a> (Download, CRAN) and install it. In case you already had R installed before taking this course, please check that you have at least version 4.3.1. (This site was last compiled using R version 4.6.1.)</li>
 <li>Download and install the free program <code>RStudio</code>: <a href="https://posit.co/products/open-source/rstudio/" class="uri">https://posit.co/products/open-source/rstudio/</a>. Pick the free desktop version.
 RStudio offers a tidier user interface for <code>R</code>.</li>
-<li>Open <code>RStudio</code>. You should see four frames as in Figure <a href="installing-and-configuring-r-and-rstudio.html#fig:rstudio">1.1</a> below. If you see only one frame on the left-hand side, click <code>File</code>, <code>New File</code>, <code>R Script</code>.</li>
+<li>Open <code>RStudio</code>. You should see four frames as in Figure <a href="installing-and-configuring-r-and-rstudio.html#fig:rstudio">1.1</a> below, though perhaps with a different colour scheme. If you see only one frame on the left-hand side, click <code>File &gt; New File &gt; R Script</code>.</li>
 </ol>
 <div class="figure"><span style="display:block;" id="fig:rstudio"></span>
 <img src="RStudio.png" alt="RStudio. _Top left_: Script editor. This is where you can enter and edit commands and comments. _Bottom left_: R console. Commands that you copy from the script editor to this console will be evaluated by `R`. _Top right_: Here you'll find a list of the objects currently available in R's working memory (none at the moment). _Bottom right_: Plots (none at the moment), help pages etc."  />
@@ -298,7 +300,9 @@ Figure 1.1: RStudio. <em>Top left</em>: Script editor. This is where you can ent
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="installing-and-configuring-r-and-rstudio.html#cb1-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <ol start="8" style="list-style-type: decimal">
-<li><p>Now put the cursor on this line in the script editor. Then click <code>Code</code>, <code>Run Line(s)</code>. (Shortcut for Windows/Linux: ctrl + enter; Mac: command + enter.)
+<li><p>Now put the cursor on this line in the script editor. Then click <code>Code &gt; Run Line(s)</code>.
+Alternatively, you can use the shortcut ctrl + enter (Windows and Linux)
+or command + enter (Mac).
 This relays the command <code>install.packages("tidyverse")</code> to <code>R</code>.
 This command adds the <code>tidyverse</code> suite to your installation of R.
 The <code>tidyverse</code> is a collection of useful add-ons that enable you to work
@@ -362,8 +366,8 @@ will appear about packages that were attached and ‘conflicts’. You can safel
 ignore these. Loading the <code>here</code> package should make the current path
 appear at the prompt.</li>
 </ol>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="installing-and-configuring-r-and-rstudio.html#cb3-1" tabindex="-1"></a><span class="co"># Load tidyverse package</span></span>
-<span id="cb3-2"><a href="installing-and-configuring-r-and-rstudio.html#cb3-2" tabindex="-1"></a><span class="co"># (Lines prefaced with hashes serve as comments -- use them liberally at first)</span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="installing-and-configuring-r-and-rstudio.html#cb3-1" tabindex="-1"></a><span class="co"># Load tidyverse and here packages</span></span>
+<span id="cb3-2"><a href="installing-and-configuring-r-and-rstudio.html#cb3-2" tabindex="-1"></a><span class="co"># (Anything prefaced with a hash serves as a comment.)</span></span>
 <span id="cb3-3"><a href="installing-and-configuring-r-and-rstudio.html#cb3-3" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <pre><code>## ── Attaching core tidyverse packages ── tidyverse 2.0.0 ──
 ## ✔ dplyr     1.2.1     ✔ readr     2.2.0
@@ -375,8 +379,7 @@ appear at the prompt.</li>
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="installing-and-configuring-r-and-rstudio.html#cb5-1" tabindex="-1"></a><span class="co"># Load here package -- this&#39;ll display a different path for you</span></span>
-<span id="cb5-2"><a href="installing-and-configuring-r-and-rstudio.html#cb5-2" tabindex="-1"></a><span class="fu">library</span>(here)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="installing-and-configuring-r-and-rstudio.html#cb5-1" tabindex="-1"></a><span class="fu">library</span>(here) <span class="co"># your path will be different to mine</span></span></code></pre></div>
 <pre><code>## here() starts at C:/Users/VanhoveJ/switchdrive/QuantMeth_Graphs</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><code>R</code> comes with a number of pre-installed datasets, among which
@@ -384,18 +387,16 @@ the <code>iris</code> dataset. This dataset contains measurements of 150 flowers
 (Later we’ll work with linguistic datasets.)
 Load this pre-installed dataset using <code>data()</code>:</li>
 </ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="installing-and-configuring-r-and-rstudio.html#cb7-1" tabindex="-1"></a><span class="co"># Load iris dataset</span></span>
-<span id="cb7-2"><a href="installing-and-configuring-r-and-rstudio.html#cb7-2" tabindex="-1"></a><span class="fu">data</span>(iris)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="installing-and-configuring-r-and-rstudio.html#cb7-1" tabindex="-1"></a><span class="fu">data</span>(iris)</span></code></pre></div>
 <ol start="3" style="list-style-type: decimal">
-<li>Show this dataset by entering its name. Take note of how this dataset
+<li>Display this dataset by entering its name. Take note of how this dataset
 is laid out: it contains measurements of 150 flowers, with each flower
 being represented by one row. For each flower, 5 pieces of information (‘variables’)
 are available, among which 4 numeric ones (<code>Sepal.Length</code>, <code>Sepal.Width</code>, <code>Petal.Length</code>, <code>Petal.Width</code>) and one non-numeric (<code>Species</code>).
 Datasets constructed in this way (1 row per observation, different columns per variable) tend to be easier to analyse than datasets with other lay-outs
 (e.g., one row per variable, different columns for separate observations).</li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="installing-and-configuring-r-and-rstudio.html#cb8-1" tabindex="-1"></a><span class="co"># Show dataset</span></span>
-<span id="cb8-2"><a href="installing-and-configuring-r-and-rstudio.html#cb8-2" tabindex="-1"></a>iris</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="installing-and-configuring-r-and-rstudio.html#cb8-1" tabindex="-1"></a>iris</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["Sepal.Length"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[5],"type":["fct"],"align":["left"]}],"data":[{"1":"5.1","2":"3.5","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.0","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.7","2":"3.2","3":"1.3","4":"0.2","5":"setosa"},{"1":"4.6","2":"3.1","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.6","3":"1.4","4":"0.2","5":"setosa"},{"1":"5.4","2":"3.9","3":"1.7","4":"0.4","5":"setosa"},{"1":"4.6","2":"3.4","3":"1.4","4":"0.3","5":"setosa"},{"1":"5.0","2":"3.4","3":"1.5","4":"0.2","5":"setosa"},{"1":"4.4","2":"2.9","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.1","3":"1.5","4":"0.1","5":"setosa"},{"1":"5.4","2":"3.7","3":"1.5","4":"0.2","5":"setosa"},{"1":"4.8","2":"3.4","3":"1.6","4":"0.2","5":"setosa"},{"1":"4.8","2":"3.0","3":"1.4","4":"0.1","5":"setosa"},{"1":"4.3","2":"3.0","3":"1.1","4":"0.1","5":"setosa"},{"1":"5.8","2":"4.0","3":"1.2","4":"0.2","5":"setosa"},{"1":"5.7","2":"4.4","3":"1.5","4":"0.4","5":"setosa"},{"1":"5.4","2":"3.9","3":"1.3","4":"0.4","5":"setosa"},{"1":"5.1","2":"3.5","3":"1.4","4":"0.3","5":"setosa"},{"1":"5.7","2":"3.8","3":"1.7","4":"0.3","5":"setosa"},{"1":"5.1","2":"3.8","3":"1.5","4":"0.3","5":"setosa"},{"1":"5.4","2":"3.4","3":"1.7","4":"0.2","5":"setosa"},{"1":"5.1","2":"3.7","3":"1.5","4":"0.4","5":"setosa"},{"1":"4.6","2":"3.6","3":"1.0","4":"0.2","5":"setosa"},{"1":"5.1","2":"3.3","3":"1.7","4":"0.5","5":"setosa"},{"1":"4.8","2":"3.4","3":"1.9","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.0","3":"1.6","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.4","3":"1.6","4":"0.4","5":"setosa"},{"1":"5.2","2":"3.5","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.2","2":"3.4","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.7","2":"3.2","3":"1.6","4":"0.2","5":"setosa"},{"1":"4.8","2":"3.1","3":"1.6","4":"0.2","5":"setosa"},{"1":"5.4","2":"3.4","3":"1.5","4":"0.4","5":"setosa"},{"1":"5.2","2":"4.1","3":"1.5","4":"0.1","5":"setosa"},{"1":"5.5","2":"4.2","3":"1.4","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.1","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.2","3":"1.2","4":"0.2","5":"setosa"},{"1":"5.5","2":"3.5","3":"1.3","4":"0.2","5":"setosa"},{"1":"4.9","2":"3.6","3":"1.4","4":"0.1","5":"setosa"},{"1":"4.4","2":"3.0","3":"1.3","4":"0.2","5":"setosa"},{"1":"5.1","2":"3.4","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.5","3":"1.3","4":"0.3","5":"setosa"},{"1":"4.5","2":"2.3","3":"1.3","4":"0.3","5":"setosa"},{"1":"4.4","2":"3.2","3":"1.3","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.5","3":"1.6","4":"0.6","5":"setosa"},{"1":"5.1","2":"3.8","3":"1.9","4":"0.4","5":"setosa"},{"1":"4.8","2":"3.0","3":"1.4","4":"0.3","5":"setosa"},{"1":"5.1","2":"3.8","3":"1.6","4":"0.2","5":"setosa"},{"1":"4.6","2":"3.2","3":"1.4","4":"0.2","5":"setosa"},{"1":"5.3","2":"3.7","3":"1.5","4":"0.2","5":"setosa"},{"1":"5.0","2":"3.3","3":"1.4","4":"0.2","5":"setosa"},{"1":"7.0","2":"3.2","3":"4.7","4":"1.4","5":"versicolor"},{"1":"6.4","2":"3.2","3":"4.5","4":"1.5","5":"versicolor"},{"1":"6.9","2":"3.1","3":"4.9","4":"1.5","5":"versicolor"},{"1":"5.5","2":"2.3","3":"4.0","4":"1.3","5":"versicolor"},{"1":"6.5","2":"2.8","3":"4.6","4":"1.5","5":"versicolor"},{"1":"5.7","2":"2.8","3":"4.5","4":"1.3","5":"versicolor"},{"1":"6.3","2":"3.3","3":"4.7","4":"1.6","5":"versicolor"},{"1":"4.9","2":"2.4","3":"3.3","4":"1.0","5":"versicolor"},{"1":"6.6","2":"2.9","3":"4.6","4":"1.3","5":"versicolor"},{"1":"5.2","2":"2.7","3":"3.9","4":"1.4","5":"versicolor"},{"1":"5.0","2":"2.0","3":"3.5","4":"1.0","5":"versicolor"},{"1":"5.9","2":"3.0","3":"4.2","4":"1.5","5":"versicolor"},{"1":"6.0","2":"2.2","3":"4.0","4":"1.0","5":"versicolor"},{"1":"6.1","2":"2.9","3":"4.7","4":"1.4","5":"versicolor"},{"1":"5.6","2":"2.9","3":"3.6","4":"1.3","5":"versicolor"},{"1":"6.7","2":"3.1","3":"4.4","4":"1.4","5":"versicolor"},{"1":"5.6","2":"3.0","3":"4.5","4":"1.5","5":"versicolor"},{"1":"5.8","2":"2.7","3":"4.1","4":"1.0","5":"versicolor"},{"1":"6.2","2":"2.2","3":"4.5","4":"1.5","5":"versicolor"},{"1":"5.6","2":"2.5","3":"3.9","4":"1.1","5":"versicolor"},{"1":"5.9","2":"3.2","3":"4.8","4":"1.8","5":"versicolor"},{"1":"6.1","2":"2.8","3":"4.0","4":"1.3","5":"versicolor"},{"1":"6.3","2":"2.5","3":"4.9","4":"1.5","5":"versicolor"},{"1":"6.1","2":"2.8","3":"4.7","4":"1.2","5":"versicolor"},{"1":"6.4","2":"2.9","3":"4.3","4":"1.3","5":"versicolor"},{"1":"6.6","2":"3.0","3":"4.4","4":"1.4","5":"versicolor"},{"1":"6.8","2":"2.8","3":"4.8","4":"1.4","5":"versicolor"},{"1":"6.7","2":"3.0","3":"5.0","4":"1.7","5":"versicolor"},{"1":"6.0","2":"2.9","3":"4.5","4":"1.5","5":"versicolor"},{"1":"5.7","2":"2.6","3":"3.5","4":"1.0","5":"versicolor"},{"1":"5.5","2":"2.4","3":"3.8","4":"1.1","5":"versicolor"},{"1":"5.5","2":"2.4","3":"3.7","4":"1.0","5":"versicolor"},{"1":"5.8","2":"2.7","3":"3.9","4":"1.2","5":"versicolor"},{"1":"6.0","2":"2.7","3":"5.1","4":"1.6","5":"versicolor"},{"1":"5.4","2":"3.0","3":"4.5","4":"1.5","5":"versicolor"},{"1":"6.0","2":"3.4","3":"4.5","4":"1.6","5":"versicolor"},{"1":"6.7","2":"3.1","3":"4.7","4":"1.5","5":"versicolor"},{"1":"6.3","2":"2.3","3":"4.4","4":"1.3","5":"versicolor"},{"1":"5.6","2":"3.0","3":"4.1","4":"1.3","5":"versicolor"},{"1":"5.5","2":"2.5","3":"4.0","4":"1.3","5":"versicolor"},{"1":"5.5","2":"2.6","3":"4.4","4":"1.2","5":"versicolor"},{"1":"6.1","2":"3.0","3":"4.6","4":"1.4","5":"versicolor"},{"1":"5.8","2":"2.6","3":"4.0","4":"1.2","5":"versicolor"},{"1":"5.0","2":"2.3","3":"3.3","4":"1.0","5":"versicolor"},{"1":"5.6","2":"2.7","3":"4.2","4":"1.3","5":"versicolor"},{"1":"5.7","2":"3.0","3":"4.2","4":"1.2","5":"versicolor"},{"1":"5.7","2":"2.9","3":"4.2","4":"1.3","5":"versicolor"},{"1":"6.2","2":"2.9","3":"4.3","4":"1.3","5":"versicolor"},{"1":"5.1","2":"2.5","3":"3.0","4":"1.1","5":"versicolor"},{"1":"5.7","2":"2.8","3":"4.1","4":"1.3","5":"versicolor"},{"1":"6.3","2":"3.3","3":"6.0","4":"2.5","5":"virginica"},{"1":"5.8","2":"2.7","3":"5.1","4":"1.9","5":"virginica"},{"1":"7.1","2":"3.0","3":"5.9","4":"2.1","5":"virginica"},{"1":"6.3","2":"2.9","3":"5.6","4":"1.8","5":"virginica"},{"1":"6.5","2":"3.0","3":"5.8","4":"2.2","5":"virginica"},{"1":"7.6","2":"3.0","3":"6.6","4":"2.1","5":"virginica"},{"1":"4.9","2":"2.5","3":"4.5","4":"1.7","5":"virginica"},{"1":"7.3","2":"2.9","3":"6.3","4":"1.8","5":"virginica"},{"1":"6.7","2":"2.5","3":"5.8","4":"1.8","5":"virginica"},{"1":"7.2","2":"3.6","3":"6.1","4":"2.5","5":"virginica"},{"1":"6.5","2":"3.2","3":"5.1","4":"2.0","5":"virginica"},{"1":"6.4","2":"2.7","3":"5.3","4":"1.9","5":"virginica"},{"1":"6.8","2":"3.0","3":"5.5","4":"2.1","5":"virginica"},{"1":"5.7","2":"2.5","3":"5.0","4":"2.0","5":"virginica"},{"1":"5.8","2":"2.8","3":"5.1","4":"2.4","5":"virginica"},{"1":"6.4","2":"3.2","3":"5.3","4":"2.3","5":"virginica"},{"1":"6.5","2":"3.0","3":"5.5","4":"1.8","5":"virginica"},{"1":"7.7","2":"3.8","3":"6.7","4":"2.2","5":"virginica"},{"1":"7.7","2":"2.6","3":"6.9","4":"2.3","5":"virginica"},{"1":"6.0","2":"2.2","3":"5.0","4":"1.5","5":"virginica"},{"1":"6.9","2":"3.2","3":"5.7","4":"2.3","5":"virginica"},{"1":"5.6","2":"2.8","3":"4.9","4":"2.0","5":"virginica"},{"1":"7.7","2":"2.8","3":"6.7","4":"2.0","5":"virginica"},{"1":"6.3","2":"2.7","3":"4.9","4":"1.8","5":"virginica"},{"1":"6.7","2":"3.3","3":"5.7","4":"2.1","5":"virginica"},{"1":"7.2","2":"3.2","3":"6.0","4":"1.8","5":"virginica"},{"1":"6.2","2":"2.8","3":"4.8","4":"1.8","5":"virginica"},{"1":"6.1","2":"3.0","3":"4.9","4":"1.8","5":"virginica"},{"1":"6.4","2":"2.8","3":"5.6","4":"2.1","5":"virginica"},{"1":"7.2","2":"3.0","3":"5.8","4":"1.6","5":"virginica"},{"1":"7.4","2":"2.8","3":"6.1","4":"1.9","5":"virginica"},{"1":"7.9","2":"3.8","3":"6.4","4":"2.0","5":"virginica"},{"1":"6.4","2":"2.8","3":"5.6","4":"2.2","5":"virginica"},{"1":"6.3","2":"2.8","3":"5.1","4":"1.5","5":"virginica"},{"1":"6.1","2":"2.6","3":"5.6","4":"1.4","5":"virginica"},{"1":"7.7","2":"3.0","3":"6.1","4":"2.3","5":"virginica"},{"1":"6.3","2":"3.4","3":"5.6","4":"2.4","5":"virginica"},{"1":"6.4","2":"3.1","3":"5.5","4":"1.8","5":"virginica"},{"1":"6.0","2":"3.0","3":"4.8","4":"1.8","5":"virginica"},{"1":"6.9","2":"3.1","3":"5.4","4":"2.1","5":"virginica"},{"1":"6.7","2":"3.1","3":"5.6","4":"2.4","5":"virginica"},{"1":"6.9","2":"3.1","3":"5.1","4":"2.3","5":"virginica"},{"1":"5.8","2":"2.7","3":"5.1","4":"1.9","5":"virginica"},{"1":"6.8","2":"3.2","3":"5.9","4":"2.3","5":"virginica"},{"1":"6.7","2":"3.3","3":"5.7","4":"2.5","5":"virginica"},{"1":"6.7","2":"3.0","3":"5.2","4":"2.3","5":"virginica"},{"1":"6.3","2":"2.5","3":"5.0","4":"1.9","5":"virginica"},{"1":"6.5","2":"3.0","3":"5.2","4":"2.0","5":"virginica"},{"1":"6.2","2":"3.4","3":"5.4","4":"2.3","5":"virginica"},{"1":"5.9","2":"3.0","3":"5.1","4":"1.8","5":"virginica"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -413,25 +414,39 @@ command’s structure.
 <strong>Emulate the coding style of this tutorial as best you can.</strong></li>
 </ol>
 <p>Explanation: Line 1 specifies the name of the dataset as it’s known
-in <code>R</code> (<code>data =</code>). Lines 2–3 specify the variables to be plotted
-(the plot’s <em>aesthetics</em>, <code>aes</code>) and how they should be plotted
-(along the <em>x</em> and <em>y</em> axes). Line 4 specifies that the data should
-be plotted as points.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="installing-and-configuring-r-and-rstudio.html#cb9-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris,             <span class="co"># Specify the name of the dataset</span></span>
+in <code>R</code> (<code>data =</code>).
+Lines 2–4 specify the variables to be plotted
+(the plot’s <em>aesthetics</em>, <code>aes</code>) and how they should be plotted:
+the variable <code>Sepal.Length</code> gets mapped onto the <em>x</em> axis,
+the variable <code>Petal.Length</code> onto the <em>y</em> axis,
+and the variable <code>Species</code> (a non-numeric variable) is colour-coded.
+Line 5 specifies that the data should be plotted as points.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="installing-and-configuring-r-and-rstudio.html#cb9-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> iris,             <span class="co"># Specify name of dataset</span></span>
 <span id="cb9-2"><a href="installing-and-configuring-r-and-rstudio.html#cb9-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length,    <span class="co"># Variable for x axis (aes = &#39;aesthetics&#39;)</span></span>
-<span id="cb9-3"><a href="installing-and-configuring-r-and-rstudio.html#cb9-3" tabindex="-1"></a>           <span class="at">y =</span> Petal.Length)) <span class="sc">+</span> <span class="co"># Variable for y axis (don&#39;t forget the &#39;+&#39;)</span></span>
-<span id="cb9-4"><a href="installing-and-configuring-r-and-rstudio.html#cb9-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()                  <span class="co"># Plot the data as points</span></span></code></pre></div>
+<span id="cb9-3"><a href="installing-and-configuring-r-and-rstudio.html#cb9-3" tabindex="-1"></a>           <span class="at">y =</span> Petal.Length,    <span class="co"># Variable for y axis</span></span>
+<span id="cb9-4"><a href="installing-and-configuring-r-and-rstudio.html#cb9-4" tabindex="-1"></a>           <span class="at">colour =</span> Species)) <span class="sc">+</span> <span class="co"># Variable to map onto colour (don&#39;t forget &#39;+&#39;!)</span></span>
+<span id="cb9-5"><a href="installing-and-configuring-r-and-rstudio.html#cb9-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()                  <span class="co"># Plot data as points</span></span></code></pre></div>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-6-1.png" alt="" width="672" /></p>
+<p>Note, incidentally, that the graph reveals that the different species
+are fairly distinct from one another; especially setosa flowers look
+markedly different from the other two.
+Further, <code>Sepal.Length</code> and <code>Petal.Length</code> seem to be positively correlated
+in versicolor and virginica flowers, but not so much in setosa flowers.</p>
 <ol start="5" style="list-style-type: decimal">
 <li>If you’ve successfully run the commands above, you should see a graph displayed
-in the bottom right pane. Now save this figure to your computer using the following command. The figure will be saved in the subdirectory <code>figures</code>, and it will be a <code>.png</code> file. Other formats, e.g., <code>.jpg</code>, <code>.pdf</code>, <code>.bmp</code>, <code>.svg</code> will also work.</li>
+in the bottom right pane. Now save this figure to your computer using the
+following command. The figure will be saved in the subdirectory <code>figures</code>,
+and it will be a <code>.png</code> file. Other formats, e.g., <code>.jpg</code>, <code>.pdf</code>, <code>.bmp</code>,
+<code>.svg</code> will also work.</li>
 </ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="installing-and-configuring-r-and-rstudio.html#cb10-1" tabindex="-1"></a><span class="co"># This saves the plot to the figures subdirectory.</span></span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="installing-and-configuring-r-and-rstudio.html#cb10-1" tabindex="-1"></a><span class="co"># Saves plot to figures subdirectory</span></span>
 <span id="cb10-2"><a href="installing-and-configuring-r-and-rstudio.html#cb10-2" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">here</span>(<span class="st">&quot;figures&quot;</span>, <span class="st">&quot;01_first_scatterplot.png&quot;</span>))</span></code></pre></div>
 <p>For those already familiar with R: <code>ggsave()</code> only works for saving the last figure
 drawn using <code>ggplot()</code>; it won’t work for figures drawn in base R.</p>
 <ol start="6" style="list-style-type: decimal">
-<li>Add the following lines. They output the R, RStudio and package versions used as well as some additional information that can be useful when figuring out why something isn’t working as it should.</li>
+<li>Add the following lines. They output the R, RStudio and package versions
+used as well as some additional information that can be useful when figuring
+out why something isn’t working as it should.</li>
 </ol>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="installing-and-configuring-r-and-rstudio.html#cb11-1" tabindex="-1"></a><span class="co"># Software versions used</span></span>
 <span id="cb11-2"><a href="installing-and-configuring-r-and-rstudio.html#cb11-2" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">session_info</span>()</span></code></pre></div>
@@ -443,8 +458,10 @@ drawn using <code>ggplot()</code>; it won’t work for figures drawn in base R.<
 <h2><span class="header-section-number">1.4</span> Exercise<a href="installing-and-configuring-r-and-rstudio.html#exercise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>Create a <em>new</em> script with which you draw a scatterplot
-in which the <code>Petal.Width</code> variable from the <code>iris</code>dataset is plotting
+in which the <code>Petal.Width</code> variable from the <code>iris</code>dataset is plotted
 along the <em>x</em>-axis and the <code>Sepal.Width</code> variable is plotted along the <em>y</em>-axis.
+Map the variable <code>Species</code> onto the parameter <code>shape</code> (i.e., replace <code>colour</code>
+in the tutorial code by <code>shape</code>).
 You don’t have to reinstall all the packages again,
 but you will need to <em>load</em> them.
 So do not include the <code>install.packages()</code> commands, but do include
@@ -454,6 +471,13 @@ Give the script and the figure sensible names (something starting with <code>01_
 <li><p>Compile a HTML report.</p></li>
 <li><p>Hand in both the HTML report and the figure via Moodle.</p></li>
 </ol>
+</div>
+<div id="documentation" class="section level2 hasAnchor" number="1.5">
+<h2><span class="header-section-number">1.5</span> Documentation<a href="installing-and-configuring-r-and-rstudio.html#documentation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The <code>tidyverse</code>’s documentation, including documentation
+for the <code>ggplot2</code> package we’ll use throughout,
+can be found at <a href="https://tidyverse.org/" class="uri">https://tidyverse.org/</a>.
+There, you’ll also find cheatsheets.</p>
 
 </div>
 </div>
@@ -462,7 +486,7 @@ Give the script and the figure sensible names (something starting with <code>01_
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tips.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="reading-in-data-and-drawing-a-histogram.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
