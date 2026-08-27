@@ -295,7 +295,7 @@ expressing its formal similarity to its French, German or English cognate).</p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="scatterplots.html#cb46-1" tabindex="-1"></a><span class="co"># Read in data</span></span>
 <span id="cb46-2"><a href="scatterplots.html#cb46-2" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;Vanhove2014_Translations.csv&quot;</span>))</span></code></pre></div>
 <pre><code>## Rows: 16300 Columns: 15
-## ── Column specification ──────────────────────────────────
+## ── Column specification ───────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr  (5): Stimulus, Mode, Translation, Sex, Status
 ## dbl (10): Subject, Trial, Correct, Age, NrLang, DS.Total, WST.Right, Raven.R...
@@ -421,10 +421,9 @@ It’d be more useful to split this figure up by modality:</p>
 <pre><code>## `summarise()` has regrouped the output.
 ## ℹ Summaries were computed grouped by Subject and Mode.
 ## ℹ Output is grouped by Subject.
-## ℹ Use `summarise(.groups = &quot;drop_last&quot;)` to silence this
-##   message.
-## ℹ Use `summarise(.by = c(Subject, Mode))` for
-##   per-operation grouping (`?dplyr::dplyr_by`) instead.</code></pre>
+## ℹ Use `summarise(.groups = &quot;drop_last&quot;)` to silence this message.
+## ℹ Use `summarise(.by = c(Subject, Mode))` for per-operation
+##   grouping (`?dplyr::dplyr_by`) instead.</code></pre>
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="scatterplots.html#cb55-1" tabindex="-1"></a>per_part2</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
@@ -509,8 +508,8 @@ this graph into two panels: one for written words, and one for spoken words.</p>
 <span id="cb61-11"><a href="scatterplots.html#cb61-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;A title of your choice&quot;</span>,</span>
 <span id="cb61-12"><a href="scatterplots.html#cb61-12" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;(and perhaps even a subtitle)&quot;</span>,</span>
 <span id="cb61-13"><a href="scatterplots.html#cb61-13" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">&quot;(and a caption)&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning: Removed 2 rows containing missing values or values
-## outside the scale range (`geom_point()`).</code></pre>
+<pre><code>## Warning: Removed 2 rows containing missing values or values outside the
+## scale range (`geom_point()`).</code></pre>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-65-1.png" alt="" width="432" /></p>
 <p>(The warning concerns missing values in the <code>WST</code> variable. Inspect the dataset
 to find for how many participants the <code>WST</code> score is missing!)</p>

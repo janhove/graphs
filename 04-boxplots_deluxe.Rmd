@@ -12,6 +12,8 @@ you want to get a quick idea of the distribution
 of the data in different groups (see last week).
 
 However, **identically looking boxplots can represent markedly different distributions!** 
+See my blog post [_Different distributions, same boxplot_](https://janhove.github.io/posts/2026-08-17-boxplot-distributions/)
+for examples.
 
 For this reason, it can be useful to draw boxplots
 that also show the _individual_ data points rather
