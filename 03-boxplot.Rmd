@@ -117,8 +117,6 @@ ggplot(data = d_box,
        aes(x = LearningCondition, 
            y = PropCorrect)) +    
   geom_boxplot() +               
-  xlab("Learning condition") +          
-  ylab("Proportion correct answers") + 
   theme_bw()
 ```
 
@@ -131,8 +129,6 @@ ggplot(data = d_box,
        aes(x = LearningCondition, 
            y = PropCorrect)) +    
   geom_boxplot() +               
-  xlab("Learning condition") +          
-  ylab("Proportion correct answers") + 
   theme_bw(15)
 ```
 
@@ -199,7 +195,7 @@ To check which participants already had some minimal knowledge of Swedish,
 they also had to translate five words without cognates in German, English or French
 (e.g., _älska_ 'to love'); these are known as 'profile words'.
 For the subsequent analysis, it was important to know
-(a) how many participants could translate at least one such profile word correctly; and 
+(a) how many participants could translate at least one such profile word correctly (`ProfileCorrect`); and 
 (b) if participants who could translate at least one such profile word did better at translating cognates than those who couldn't.
 
 The column `CorrectCognates` contains the number of correct cognate
@@ -208,6 +204,13 @@ in question was able to translate at least one profile word correctly (`yes` vs.
 
 1. In a new script, read in the dataset into R.
 2. Compute the number of participants who were able to correctly translate at least one profile word.
-2. Use a boxplot to compare the number of correctly translated cognate words between participants that could translate at least one profile word correctly and those that couldn't. Label your axes appropriately.
-3. Compile the HTML report.
-4. Submit both the boxplot and the HTML report.
+3. Use a boxplot to compare the number of correctly translated cognate words between participants that could translate at least one profile word correctly and those that couldn't. Label your axes appropriately.
+4. Compile the HTML report.
+5. Submit both the boxplot and the HTML report.
+
+**Hint:** Use `sum()` to count stuff. For instance,
+```{r, eval = FALSE}
+sum(ProfileCorrect == "yes")
+```
+counts how many entries in `ProfileCorrect` are equal to (`==`) `"yes"`.
+
