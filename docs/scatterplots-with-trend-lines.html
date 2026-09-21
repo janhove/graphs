@@ -277,20 +277,21 @@ two variables using scatterplot smoothers.</p>
 </div>
 <div id="drawing-scatterplot-smoothers" class="section level2 hasAnchor" number="8.2">
 <h2><span class="header-section-number">8.2</span> Drawing scatterplot smoothers<a href="scatterplots-with-trend-lines.html#drawing-scatterplot-smoothers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="scatterplots-with-trend-lines.html#cb63-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">dat =</span> per_part,</span>
-<span id="cb63-2"><a href="scatterplots-with-trend-lines.html#cb63-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> English.Total, </span>
-<span id="cb63-3"><a href="scatterplots-with-trend-lines.html#cb63-3" tabindex="-1"></a>           <span class="at">y =</span> number_correct)) <span class="sc">+</span></span>
-<span id="cb63-4"><a href="scatterplots-with-trend-lines.html#cb63-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb63-5"><a href="scatterplots-with-trend-lines.html#cb63-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span> <span class="co"># add smoother</span></span>
-<span id="cb63-6"><a href="scatterplots-with-trend-lines.html#cb63-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Result English test&quot;</span>) <span class="sc">+</span></span>
-<span id="cb63-7"><a href="scatterplots-with-trend-lines.html#cb63-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Numer of correct translations&quot;</span>) <span class="sc">+</span></span>
-<span id="cb63-8"><a href="scatterplots-with-trend-lines.html#cb63-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Mode))</span></code></pre></div>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 6 rows containing non-finite outside the scale range
-## (`stat_smooth()`).</code></pre>
-<pre><code>## Warning: Removed 6 rows containing missing values or values outside the
-## scale range (`geom_point()`).</code></pre>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-66-1.png" alt="" width="480" /></p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="scatterplots-with-trend-lines.html#cb64-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">dat =</span> per_part,</span>
+<span id="cb64-2"><a href="scatterplots-with-trend-lines.html#cb64-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> English.Total, </span>
+<span id="cb64-3"><a href="scatterplots-with-trend-lines.html#cb64-3" tabindex="-1"></a>           <span class="at">y =</span> number_correct)) <span class="sc">+</span></span>
+<span id="cb64-4"><a href="scatterplots-with-trend-lines.html#cb64-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb64-5"><a href="scatterplots-with-trend-lines.html#cb64-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>() <span class="sc">+</span> <span class="co"># add smoother</span></span>
+<span id="cb64-6"><a href="scatterplots-with-trend-lines.html#cb64-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Result English test&quot;</span>) <span class="sc">+</span></span>
+<span id="cb64-7"><a href="scatterplots-with-trend-lines.html#cb64-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Numer of correct translations&quot;</span>) <span class="sc">+</span></span>
+<span id="cb64-8"><a href="scatterplots-with-trend-lines.html#cb64-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Mode))</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and
+## formula = &#39;y ~ x&#39;</code></pre>
+<pre><code>## Warning: Removed 6 rows containing non-finite outside the
+## scale range (`stat_smooth()`).</code></pre>
+<pre><code>## Warning: Removed 6 rows containing missing values or
+## values outside the scale range (`geom_point()`).</code></pre>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-67-1.png" alt="" width="480" /></p>
 <p>The blue line is the smoother;
 the grey ribbon around it is known as a (95%) confidence band
 and communicates our uncertainty about the precise location
@@ -299,20 +300,21 @@ Of course, you can change the colour of the line to suit
 your personal taste, and you can turn off the grey ribbon (<code>se = FALSE</code>; <code>se</code> is short for ‘standard error’, which is unfortunate – standard errors and confidence bands aren’t the same thing).
 We’re going to turn off the confidence band because it’s bound to be misinterpreted
 anyway.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="scatterplots-with-trend-lines.html#cb67-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">dat =</span> per_part,</span>
-<span id="cb67-2"><a href="scatterplots-with-trend-lines.html#cb67-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> English.Total, </span>
-<span id="cb67-3"><a href="scatterplots-with-trend-lines.html#cb67-3" tabindex="-1"></a>           <span class="at">y =</span> number_correct)) <span class="sc">+</span></span>
-<span id="cb67-4"><a href="scatterplots-with-trend-lines.html#cb67-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb67-5"><a href="scatterplots-with-trend-lines.html#cb67-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb67-6"><a href="scatterplots-with-trend-lines.html#cb67-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Result English test&quot;</span>) <span class="sc">+</span></span>
-<span id="cb67-7"><a href="scatterplots-with-trend-lines.html#cb67-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Numer of correct translations&quot;</span>) <span class="sc">+</span></span>
-<span id="cb67-8"><a href="scatterplots-with-trend-lines.html#cb67-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Mode))</span></code></pre></div>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning: Removed 6 rows containing non-finite outside the scale range
-## (`stat_smooth()`).</code></pre>
-<pre><code>## Warning: Removed 6 rows containing missing values or values outside the
-## scale range (`geom_point()`).</code></pre>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-67-1.png" alt="" width="480" /></p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="scatterplots-with-trend-lines.html#cb68-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">dat =</span> per_part,</span>
+<span id="cb68-2"><a href="scatterplots-with-trend-lines.html#cb68-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> English.Total, </span>
+<span id="cb68-3"><a href="scatterplots-with-trend-lines.html#cb68-3" tabindex="-1"></a>           <span class="at">y =</span> number_correct)) <span class="sc">+</span></span>
+<span id="cb68-4"><a href="scatterplots-with-trend-lines.html#cb68-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb68-5"><a href="scatterplots-with-trend-lines.html#cb68-5" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb68-6"><a href="scatterplots-with-trend-lines.html#cb68-6" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Result English test&quot;</span>) <span class="sc">+</span></span>
+<span id="cb68-7"><a href="scatterplots-with-trend-lines.html#cb68-7" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Numer of correct translations&quot;</span>) <span class="sc">+</span></span>
+<span id="cb68-8"><a href="scatterplots-with-trend-lines.html#cb68-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(Mode))</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and
+## formula = &#39;y ~ x&#39;</code></pre>
+<pre><code>## Warning: Removed 6 rows containing non-finite outside the
+## scale range (`stat_smooth()`).</code></pre>
+<pre><code>## Warning: Removed 6 rows containing missing values or
+## values outside the scale range (`geom_point()`).</code></pre>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-68-1.png" alt="" width="480" /></p>
 </div>
 <div id="so-whats-a-scatterplot-smoother-anyway" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> So what’s a scatterplot smoother anyway?<a href="scatterplots-with-trend-lines.html#so-whats-a-scatterplot-smoother-anyway" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -336,7 +338,7 @@ but the following points are important:</p>
 <p>This section serves to show you what true nonlinear relationships
 can look like and how you sometimes need to fiddle with <code>geom_smooth()</code>’s settings.</p>
 <p>In the first example, the <em>red</em> line was drawn with the default settings. This line doesn’t capture an important feature of the relationship (the data points go up and down). The <em>blue</em> line captures this trend much better. It was drawn using the command <code>geom_smooth(span = 0.1)</code>. The <code>span</code> parameter determines how wiggly the curve may be (the smaller <code>span</code>, the wigglier the curve). By default, span is set to 0.75. Finding a decent span value is matter of trial and error.</p>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-68-1.png" alt="" width="336" /></p>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-69-1.png" alt="" width="336" /></p>
 <p>In the second example, the <em>red</em> line was drawn
 using <code>geom_smooth(span = 0.1)</code>.
 This line is much too wiggly, and it essentially
@@ -344,7 +346,7 @@ models random deviations from the general trend.
 The <em>blue</em> line, drawn with the default setting (<code>span = 0.75</code>),
 captures the general trend much more sensibly.
 The <em>green</em> line, by contrast, isn’t wiggly enough (<code>span = 3</code>).</p>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-69-1.png" alt="" width="576" /></p>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-70-1.png" alt="" width="576" /></p>
 <p><strong>Summing up:</strong> Generally, the default settings work reasonably well. But when you notice that visually salient patterns
 in the scatterplot aren’t captured by the trend line,
 you need to fiddle a bit with the <code>span</code> parameter.</p>

@@ -291,7 +291,7 @@ div.csl-indent {
 </ol>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="reading-in-data-and-drawing-a-histogram.html#cb12-1" tabindex="-1"></a>d_hist <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;Vanhove2015_Vpn.csv&quot;</span>))</span></code></pre></div>
 <pre><code>## Rows: 80 Columns: 6
-## ── Column specification ───────────────────────────────────────────
+## ── Column specification ──────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (1): Geschlecht
 ## dbl (5): VPN, Wortschatz, Englisch, Französisch, Alter
@@ -315,7 +315,8 @@ Like for last week’s scatterplot, we need to define the object and the variabl
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="reading-in-data-and-drawing-a-histogram.html#cb15-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_hist,       <span class="co"># specify data set</span></span>
 <span id="cb15-2"><a href="reading-in-data-and-drawing-a-histogram.html#cb15-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Englisch)) <span class="sc">+</span> <span class="co"># variable to be drawn</span></span>
 <span id="cb15-3"><a href="reading-in-data-and-drawing-a-histogram.html#cb15-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()          <span class="co"># draw as histogram</span></span></code></pre></div>
-<pre><code>## `stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value
+## `binwidth`.</code></pre>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-12-1.png" alt="" width="672" /></p>
 <p>The histogram shows, among other things, that there are 8 individuals with an English vocabulary score just below 0.7 and 4 with a score just below 0.6. By default, 30 such <em>bins</em> are drawn, but as the warning indicates (‘Pick better value’), there’s nothing special about this number. You can adjust the desired bin width:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="reading-in-data-and-drawing-a-histogram.html#cb17-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_hist,</span>

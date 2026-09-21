@@ -368,9 +368,7 @@ to the <code>ggplot</code> call:</li>
 <span id="cb24-2"><a href="drawing-a-boxplot.html#cb24-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
 <span id="cb24-3"><a href="drawing-a-boxplot.html#cb24-3" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span>    </span>
 <span id="cb24-4"><a href="drawing-a-boxplot.html#cb24-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span>               </span>
-<span id="cb24-5"><a href="drawing-a-boxplot.html#cb24-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span>          </span>
-<span id="cb24-6"><a href="drawing-a-boxplot.html#cb24-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb24-7"><a href="drawing-a-boxplot.html#cb24-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<span id="cb24-5"><a href="drawing-a-boxplot.html#cb24-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-23-1.png" alt="" width="672" /></p>
 <p>For other options, see <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="uri">https://ggplot2.tidyverse.org/reference/ggtheme.html</a>.</p>
 <ol start="2" style="list-style-type: decimal">
@@ -380,9 +378,7 @@ to the <code>ggplot</code> call:</li>
 <span id="cb25-2"><a href="drawing-a-boxplot.html#cb25-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
 <span id="cb25-3"><a href="drawing-a-boxplot.html#cb25-3" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span>    </span>
 <span id="cb25-4"><a href="drawing-a-boxplot.html#cb25-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span>               </span>
-<span id="cb25-5"><a href="drawing-a-boxplot.html#cb25-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span>          </span>
-<span id="cb25-6"><a href="drawing-a-boxplot.html#cb25-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span> </span>
-<span id="cb25-7"><a href="drawing-a-boxplot.html#cb25-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">15</span>)</span></code></pre></div>
+<span id="cb25-5"><a href="drawing-a-boxplot.html#cb25-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">15</span>)</span></code></pre></div>
 <p><img src="BookletMethodology_files/figure-html/unnamed-chunk-24-1.png" alt="" width="672" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>When you’re happy with a plot, you can save it using <code>ggsave()</code>. You can set the width and height of the figure using the <code>width</code> and <code>height</code> parameters, e.g.,</li>
@@ -452,7 +448,7 @@ To check which participants already had some minimal knowledge of Swedish,
 they also had to translate five words without cognates in German, English or French
 (e.g., <em>älska</em> ‘to love’); these are known as ‘profile words’.
 For the subsequent analysis, it was important to know
-(a) how many participants could translate at least one such profile word correctly; and
+(a) how many participants could translate at least one such profile word correctly (<code>ProfileCorrect</code>); and
 (b) if participants who could translate at least one such profile word did better at translating cognates than those who couldn’t.</p>
 <p>The column <code>CorrectCognates</code> contains the number of correct cognate
 translations per participant; the column shows whether the participant
@@ -464,6 +460,9 @@ in question was able to translate at least one profile word correctly (<code>yes
 <li>Compile the HTML report.</li>
 <li>Submit both the boxplot and the HTML report.</li>
 </ol>
+<p><strong>Hint:</strong> Use <code>sum()</code> to count stuff. For instance,</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="drawing-a-boxplot.html#cb29-1" tabindex="-1"></a><span class="fu">sum</span>(ProfileCorrect <span class="sc">==</span> <span class="st">&quot;yes&quot;</span>)</span></code></pre></div>
+<p>counts how many entries in <code>ProfileCorrect</code> are equal to (<code>==</code>) <code>"yes"</code>.</p>
 
 </div>
 </div>

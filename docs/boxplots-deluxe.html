@@ -298,13 +298,13 @@ use scripts rather than typing your commands directly to the prompt.</p>
 <li>Read in the dataset <code>VowelChoices_ij.csv</code> (see last week).</li>
 <li>Draw the boxplot of last week’s tutorial again.</li>
 </ol>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="boxplots-deluxe.html#cb29-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,</span>
-<span id="cb29-2"><a href="boxplots-deluxe.html#cb29-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, <span class="at">y =</span> PropCorrect)) <span class="sc">+</span></span>
-<span id="cb29-3"><a href="boxplots-deluxe.html#cb29-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb29-4"><a href="boxplots-deluxe.html#cb29-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span></span>
-<span id="cb29-5"><a href="boxplots-deluxe.html#cb29-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span></span>
-<span id="cb29-6"><a href="boxplots-deluxe.html#cb29-6" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">12</span>)</span></code></pre></div>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-29-1.png" alt="" width="384" /></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="boxplots-deluxe.html#cb30-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,</span>
+<span id="cb30-2"><a href="boxplots-deluxe.html#cb30-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, <span class="at">y =</span> PropCorrect)) <span class="sc">+</span></span>
+<span id="cb30-3"><a href="boxplots-deluxe.html#cb30-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb30-4"><a href="boxplots-deluxe.html#cb30-4" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span></span>
+<span id="cb30-5"><a href="boxplots-deluxe.html#cb30-5" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span></span>
+<span id="cb30-6"><a href="boxplots-deluxe.html#cb30-6" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">12</span>)</span></code></pre></div>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-30-1.png" alt="" width="384" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>We can add another <em>layer</em> to this graph by
 inserting the command <code>geom_point()</code> into the ggplot call.
@@ -312,14 +312,14 @@ inserting the command <code>geom_point()</code> into the ggplot call.
 Since we insert <code>geom_point()</code> <em>after</em> <code>geom_boxplot()</code>,
 these points will be plotted <em>on top of</em> (rather than underneath) the boxplots.</li>
 </ol>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="boxplots-deluxe.html#cb30-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,</span>
-<span id="cb30-2"><a href="boxplots-deluxe.html#cb30-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, <span class="at">y =</span> PropCorrect)) <span class="sc">+</span></span>
-<span id="cb30-3"><a href="boxplots-deluxe.html#cb30-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb30-4"><a href="boxplots-deluxe.html#cb30-4" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>    <span class="co"># draw individual data points</span></span>
-<span id="cb30-5"><a href="boxplots-deluxe.html#cb30-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span></span>
-<span id="cb30-6"><a href="boxplots-deluxe.html#cb30-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span></span>
-<span id="cb30-7"><a href="boxplots-deluxe.html#cb30-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">12</span>)</span></code></pre></div>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-30-1.png" alt="" width="384" /></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="boxplots-deluxe.html#cb31-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,</span>
+<span id="cb31-2"><a href="boxplots-deluxe.html#cb31-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, <span class="at">y =</span> PropCorrect)) <span class="sc">+</span></span>
+<span id="cb31-3"><a href="boxplots-deluxe.html#cb31-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb31-4"><a href="boxplots-deluxe.html#cb31-4" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span>    <span class="co"># draw individual data points</span></span>
+<span id="cb31-5"><a href="boxplots-deluxe.html#cb31-5" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="boxplots-deluxe.html#cb31-6" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="boxplots-deluxe.html#cb31-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">12</span>)</span></code></pre></div>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-31-1.png" alt="" width="384" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li><p>If you count the number of points in this graph, you’ll notice that there are fewer points (28) than there were participants (80).
 The reason is that several participants obtained the same result, and their data are plotted on top of each other.
@@ -331,32 +331,32 @@ To do this, we need to specify the <code>position</code> parameter inside the <c
 <li>Notice that I’ve additionally specified the <code>outlier.shape</code> parameter in the <code>geom_boxplot()</code> command as <code>NA</code> (<em>not available</em>). This prevents the <code>geom_boxplot()</code> command from plotting outlying data points so that these points aren’t plotted twice (as part of the boxplot and as an individual data point).</li>
 </ul></li>
 </ol>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="boxplots-deluxe.html#cb31-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,</span>
-<span id="cb31-2"><a href="boxplots-deluxe.html#cb31-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
-<span id="cb31-3"><a href="boxplots-deluxe.html#cb31-3" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span></span>
-<span id="cb31-4"><a href="boxplots-deluxe.html#cb31-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span> <span class="co"># don&#39;t plot outliers twice</span></span>
-<span id="cb31-5"><a href="boxplots-deluxe.html#cb31-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>,   <span class="co"># horizontal jittering</span></span>
-<span id="cb31-6"><a href="boxplots-deluxe.html#cb31-6" tabindex="-1"></a>                                        <span class="at">height =</span> <span class="dv">0</span>)) <span class="sc">+</span> <span class="co"># but no vertical jittering</span></span>
-<span id="cb31-7"><a href="boxplots-deluxe.html#cb31-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span></span>
-<span id="cb31-8"><a href="boxplots-deluxe.html#cb31-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span></span>
-<span id="cb31-9"><a href="boxplots-deluxe.html#cb31-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">12</span>)</span></code></pre></div>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-31-1.png" alt="" width="384" /></p>
-<ol start="5" style="list-style-type: decimal">
-<li>To make the individual data points more visually distinct, we can change the plotting symbol by changing the <code>shape</code> parameter. This overview shows which plotting symbols are available:</li>
-</ol>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-32-1.png" alt="" width="672" /></p>
-<p>Empty circles tend to work well (shape 1):</p>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="boxplots-deluxe.html#cb32-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,</span>
 <span id="cb32-2"><a href="boxplots-deluxe.html#cb32-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
 <span id="cb32-3"><a href="boxplots-deluxe.html#cb32-3" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span></span>
-<span id="cb32-4"><a href="boxplots-deluxe.html#cb32-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span> </span>
-<span id="cb32-5"><a href="boxplots-deluxe.html#cb32-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>,   </span>
-<span id="cb32-6"><a href="boxplots-deluxe.html#cb32-6" tabindex="-1"></a>                                        <span class="at">height =</span> <span class="dv">0</span>), </span>
-<span id="cb32-7"><a href="boxplots-deluxe.html#cb32-7" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="co">#  1 = empty circles</span></span>
-<span id="cb32-8"><a href="boxplots-deluxe.html#cb32-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span></span>
-<span id="cb32-9"><a href="boxplots-deluxe.html#cb32-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span></span>
-<span id="cb32-10"><a href="boxplots-deluxe.html#cb32-10" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">12</span>)</span></code></pre></div>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-33-1.png" alt="" width="384" /></p>
+<span id="cb32-4"><a href="boxplots-deluxe.html#cb32-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span> <span class="co"># don&#39;t plot outliers twice</span></span>
+<span id="cb32-5"><a href="boxplots-deluxe.html#cb32-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>,   <span class="co"># horizontal jittering</span></span>
+<span id="cb32-6"><a href="boxplots-deluxe.html#cb32-6" tabindex="-1"></a>                                        <span class="at">height =</span> <span class="dv">0</span>)) <span class="sc">+</span> <span class="co"># but no vertical jittering</span></span>
+<span id="cb32-7"><a href="boxplots-deluxe.html#cb32-7" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span></span>
+<span id="cb32-8"><a href="boxplots-deluxe.html#cb32-8" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span></span>
+<span id="cb32-9"><a href="boxplots-deluxe.html#cb32-9" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">12</span>)</span></code></pre></div>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-32-1.png" alt="" width="384" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>To make the individual data points more visually distinct, we can change the plotting symbol by changing the <code>shape</code> parameter. This overview shows which plotting symbols are available:</li>
+</ol>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-33-1.png" alt="" width="672" /></p>
+<p>Empty circles tend to work well (shape 1):</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="boxplots-deluxe.html#cb33-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> d_box,</span>
+<span id="cb33-2"><a href="boxplots-deluxe.html#cb33-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> LearningCondition, </span>
+<span id="cb33-3"><a href="boxplots-deluxe.html#cb33-3" tabindex="-1"></a>           <span class="at">y =</span> PropCorrect)) <span class="sc">+</span></span>
+<span id="cb33-4"><a href="boxplots-deluxe.html#cb33-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span> </span>
+<span id="cb33-5"><a href="boxplots-deluxe.html#cb33-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>,   </span>
+<span id="cb33-6"><a href="boxplots-deluxe.html#cb33-6" tabindex="-1"></a>                                        <span class="at">height =</span> <span class="dv">0</span>), </span>
+<span id="cb33-7"><a href="boxplots-deluxe.html#cb33-7" tabindex="-1"></a>             <span class="at">shape =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="co">#  1 = empty circles</span></span>
+<span id="cb33-8"><a href="boxplots-deluxe.html#cb33-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Learning condition&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-9"><a href="boxplots-deluxe.html#cb33-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Proportion correct answers&quot;</span>) <span class="sc">+</span></span>
+<span id="cb33-10"><a href="boxplots-deluxe.html#cb33-10" tabindex="-1"></a>  <span class="fu">theme_bw</span>(<span class="dv">12</span>)</span></code></pre></div>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-34-1.png" alt="" width="384" /></p>
 <p>(Shapes 21 through 25 resemble shapes 1 through 5, but they can be coloured in.)</p>
 <ol start="6" style="list-style-type: decimal">
 <li>More info: <a href="https://janhove.github.io/posts/2016-06-21-drawing-a-boxplot/" class="uri">https://janhove.github.io/posts/2016-06-21-drawing-a-boxplot/</a>.</li>

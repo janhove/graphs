@@ -282,7 +282,7 @@ div.csl-indent {
 <h2><span class="header-section-number">6.2</span> Pie charts, bar charts, and dot plots<a href="dot-plots.html#pie-charts-bar-charts-and-dot-plots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The three graphs below all show the same data
 (the proportion of sales of a pie producer by pie taste).<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-39-1.png" alt="" width="1152" /></p>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-40-1.png" alt="" width="1152" /></p>
 <p>The graph on the left is a traditional <strong>pie chart</strong>.
 Though common, this type of graph has serious shortcomings,
 for which reason it should rarely be used:</p>
@@ -301,7 +301,7 @@ For one things, they’re more flexible.
 For instance, you can add the sales from the year before to
 both graphs—as separate bars or by using different symbols.
 This would be difficult to accomplish in a pie chart:</p>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-40-1.png" alt="" width="960" /></p>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-41-1.png" alt="" width="960" /></p>
 <p>I prefer dot plots because it’s easier to visualise a large
 number of categories and I find them less ‘busy’.</p>
 <p><strong>Tip:</strong> If you prefer bar charts: It’s usually better to plot the bars <em>next</em> to each other rather than to stack them on <em>top</em> of each other.</p>
@@ -309,8 +309,8 @@ number of categories and I find them less ‘busy’.</p>
 <p>Incidentally, if you enter the following command in R,
 the help page for the <code>pie()</code> function opens.
 Then scroll down to the section <code>Note</code>.</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="dot-plots.html#cb38-1" tabindex="-1"></a><span class="co"># Help page for pie()</span></span>
-<span id="cb38-2"><a href="dot-plots.html#cb38-2" tabindex="-1"></a>?pie</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="dot-plots.html#cb39-1" tabindex="-1"></a><span class="co"># Help page for pie()</span></span>
+<span id="cb39-2"><a href="dot-plots.html#cb39-2" tabindex="-1"></a>?pie</span></code></pre></div>
 </div>
 <div id="tutorial-2" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Tutorial<a href="dot-plots.html#tutorial-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -330,9 +330,9 @@ One of the research questions was if Belgian and Dutch participants
 were more likely to choose the neuter article <em>das</em> if the German word’s
 Dutch cognate is neuter than when it has common gender.<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
 <p>Read in this dataset in <code>R</code>:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="dot-plots.html#cb39-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;GermanArticleChoices.csv&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="dot-plots.html#cb40-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>, <span class="st">&quot;GermanArticleChoices.csv&quot;</span>))</span></code></pre></div>
 <pre><code>## Rows: 88 Columns: 6
-## ── Column specification ───────────────────────────────────────────
+## ── Column specification ──────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr (5): Stimulus, Country, DutchCognate, GermanGender, DutchGender
 ## dbl (1): NeuterResponses
@@ -340,7 +340,7 @@ Dutch cognate is neuter than when it has common gender.<a href="#fn3" class="foo
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <p>The first few rows should look as follows:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="dot-plots.html#cb41-1" tabindex="-1"></a><span class="fu">head</span>(dat)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="dot-plots.html#cb42-1" tabindex="-1"></a><span class="fu">head</span>(dat)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["Stimulus"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Country"],"name":[2],"type":["chr"],"align":["left"]},{"label":["NeuterResponses"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["DutchCognate"],"name":[4],"type":["chr"],"align":["left"]},{"label":["GermanGender"],"name":[5],"type":["chr"],"align":["left"]},{"label":["DutchGender"],"name":[6],"type":["chr"],"align":["left"]}],"data":[{"1":"Stadt","2":"Belgium","3":"0.00000000","4":"stad","5":"feminine","6":"common"},{"1":"Stadt","2":"The Netherlands","3":"0.00000000","4":"stad","5":"feminine","6":"common"},{"1":"Saal","2":"Belgium","3":"0.00000000","4":"zaal","5":"masculine","6":"common"},{"1":"Saal","2":"The Netherlands","3":"0.06741573","4":"zaal","5":"masculine","6":"common"},{"1":"Nacht","2":"Belgium","3":"0.06521739","4":"nacht","5":"feminine","6":"common"},{"1":"Nacht","2":"The Netherlands","3":"0.02247191","4":"nacht","5":"feminine","6":"common"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
@@ -363,12 +363,12 @@ The code and comments show how to build this dot plot:</p>
 and adding your <em>own</em> comments than by copy-pasting them. For
 this reason, I added a couple of typos and left out a couple of
 commas and brackets – all for you to find and fix, enjoy!</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="dot-plots.html#cb42-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat,                   </span>
-<span id="cb42-2"><a href="dot-plots.html#cb42-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> NeuteResponses, </span>
-<span id="cb42-3"><a href="dot-plots.html#cb42-3" tabindex="-1"></a>           <span class="at">y =</span> Stimulus,       </span>
-<span id="cb42-4"><a href="dot-plots.html#cb42-4" tabindex="-1"></a>           <span class="at">shape =</span> Country)) <span class="sc">+</span> </span>
-<span id="cb42-5"><a href="dot-plots.html#cb42-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()                 </span></code></pre></div>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-45-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="dot-plots.html#cb43-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat,                   </span>
+<span id="cb43-2"><a href="dot-plots.html#cb43-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> NeuteResponses, </span>
+<span id="cb43-3"><a href="dot-plots.html#cb43-3" tabindex="-1"></a>           <span class="at">y =</span> Stimulus,       </span>
+<span id="cb43-4"><a href="dot-plots.html#cb43-4" tabindex="-1"></a>           <span class="at">shape =</span> Country)) <span class="sc">+</span> </span>
+<span id="cb43-5"><a href="dot-plots.html#cb43-5" tabindex="-1"></a>  <span class="fu">geom_point</span>()                 </span></code></pre></div>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-46-1.png" alt="" width="672" /></p>
 </div>
 <div id="highlight-differences-between-different-categories-of-stimuli" class="section level3 hasAnchor" number="6.3.2">
 <h3><span class="header-section-number">6.3.2</span> Highlight differences between different categories of stimuli<a href="dot-plots.html#highlight-differences-between-different-categories-of-stimuli" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -380,15 +380,15 @@ those with common-gender cognates in different boxes (<em>facetting</em>,
 see the tutorial on line charts).
 (To see what <code>scales = "free_y"</code> and <code>space = "free_y"</code> accomplish,
 leave these parameters out of the call, i.e., using just <code>facet_grid(rows = vars(DutchGender))</code>.)</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="dot-plots.html#cb43-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat,</span>
-<span id="cb43-2"><a href="dot-plots.html#cb43-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> NeuterResponses,</span>
-<span id="cb43-3"><a href="dot-plots.html#cb43-3" tabindex="-1"></a>           <span class="at">y =</span> Stimulus </span>
-<span id="cb43-4"><a href="dot-plots.html#cb43-4" tabindex="-1"></a>           <span class="at">shape =</span> Country)) <span class="sc">+</span> </span>
-<span id="cb43-5"><a href="dot-plots.html#cb43-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb43-6"><a href="dot-plots.html#cb43-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(DutchGender),   <span class="co"># split up vertically by Dutch gender</span></span>
-<span id="cb43-7"><a href="dot-plots.html#cb43-7" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>,</span>
-<span id="cb43-8"><a href="dot-plots.html#cb43-8" tabindex="-1"></a>             <span class="at">space =</span> <span class="st">&quot;free_y&quot;</span>)</span></code></pre></div>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-47-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="dot-plots.html#cb44-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat,</span>
+<span id="cb44-2"><a href="dot-plots.html#cb44-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> NeuterResponses,</span>
+<span id="cb44-3"><a href="dot-plots.html#cb44-3" tabindex="-1"></a>           <span class="at">y =</span> Stimulus </span>
+<span id="cb44-4"><a href="dot-plots.html#cb44-4" tabindex="-1"></a>           <span class="at">shape =</span> Country)) <span class="sc">+</span> </span>
+<span id="cb44-5"><a href="dot-plots.html#cb44-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb44-6"><a href="dot-plots.html#cb44-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(DutchGender),   <span class="co"># split up vertically by Dutch gender</span></span>
+<span id="cb44-7"><a href="dot-plots.html#cb44-7" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>,</span>
+<span id="cb44-8"><a href="dot-plots.html#cb44-8" tabindex="-1"></a>             <span class="at">space =</span> <span class="st">&quot;free_y&quot;</span>)</span></code></pre></div>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-48-1.png" alt="" width="672" /></p>
 <p>This graph shows pretty clearly that both Belgian and Dutch
 speakers of Dutch pick <em>das</em> more often if the German word
 has a neuter-gender cognate than when it has a common-gender
@@ -412,16 +412,16 @@ to the stimuli’s German gender.
 To highlight this, we can split up the graph not only by
 the words’ Dutch gender, but also by their German gender.
 And we still have to label the axes!</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="dot-plots.html#cb44-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat,</span>
-<span id="cb44-2"><a href="dot-plots.html#cb44-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> NeuterResponses, </span>
-<span id="cb44-3"><a href="dot-plots.html#cb44-3" tabindex="-1"></a>           <span class="at">y =</span> Stimulus,</span>
-<span id="cb44-4"><a href="dot-plots.html#cb44-4" tabindex="-1"></a>           <span class="at">shape =</span> Country)) <span class="sc">+</span></span>
-<span id="cb44-5"><a href="dot-plots.html#cb44-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span>
-<span id="cb44-6"><a href="dot-plots.html#cb44-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(DutchGender, GermanGender), <span class="co"># split up by Dutch and German gender</span></span>
-<span id="cb44-7"><a href="dot-plots.html#cb44-7" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>, <span class="at">space =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
-<span id="cb44-8"><a href="dot-plots.html#cb44-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proportion &#39;das&#39;&quot;</span>) <span class="sc">+</span> <span class="co"># axis label for x</span></span>
-<span id="cb44-9"><a href="dot-plots.html#cb44-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)                   <span class="co"># the y axis is self-explanatory</span></span></code></pre></div>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-49-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="dot-plots.html#cb45-1" tabindex="-1"></a><span class="fu">ggplot</span>(dat,</span>
+<span id="cb45-2"><a href="dot-plots.html#cb45-2" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> NeuterResponses, </span>
+<span id="cb45-3"><a href="dot-plots.html#cb45-3" tabindex="-1"></a>           <span class="at">y =</span> Stimulus,</span>
+<span id="cb45-4"><a href="dot-plots.html#cb45-4" tabindex="-1"></a>           <span class="at">shape =</span> Country)) <span class="sc">+</span></span>
+<span id="cb45-5"><a href="dot-plots.html#cb45-5" tabindex="-1"></a>  <span class="fu">geom_point</span>() </span>
+<span id="cb45-6"><a href="dot-plots.html#cb45-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(DutchGender, GermanGender), <span class="co"># split up by Dutch and German gender</span></span>
+<span id="cb45-7"><a href="dot-plots.html#cb45-7" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>, <span class="at">space =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb45-8"><a href="dot-plots.html#cb45-8" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proportion &#39;das&#39;&quot;</span>) <span class="sc">+</span> <span class="co"># axis label for x</span></span>
+<span id="cb45-9"><a href="dot-plots.html#cb45-9" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;&quot;</span>)                   <span class="co"># the y axis is self-explanatory</span></span></code></pre></div>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-50-1.png" alt="" width="672" /></p>
 <p>The upper three boxes show feminine, masculine and neuter
 German words with common-gender cognates; the lower three boxes
 show feminine, masculine and neuter German words with neuter-gender
@@ -439,34 +439,34 @@ it’s feminine or masculine.</p>
 <li>We could reorder the facets so that the word categories that result in the most <em>das</em> responses are at the top of the graph. While we’re at it, we could also give these facets clearer labels.</li>
 <li>The symbols used in the graph above are difficult to distinguish optically. They, too, can be changed.</li>
 </ul>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="dot-plots.html#cb45-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> </span>
-<span id="cb45-2"><a href="dot-plots.html#cb45-2" tabindex="-1"></a>  <span class="co"># Clearer labels</span></span>
-<span id="cb45-3"><a href="dot-plots.html#cb45-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb45-4"><a href="dot-plots.html#cb45-4" tabindex="-1"></a>    <span class="at">word_label =</span> <span class="fu">paste0</span>(Stimulus, <span class="st">&quot; (&quot;</span>, DutchCognate, <span class="st">&quot;)&quot;</span>),</span>
-<span id="cb45-5"><a href="dot-plots.html#cb45-5" tabindex="-1"></a>    <span class="at">dutch_label =</span> <span class="fu">paste0</span>(<span class="st">&quot;Du.: &quot;</span>, DutchGender),</span>
-<span id="cb45-6"><a href="dot-plots.html#cb45-6" tabindex="-1"></a>    <span class="at">german_label =</span> <span class="fu">paste0</span>(<span class="st">&quot;Gm.: &quot;</span>, GermanGender)</span>
-<span id="cb45-7"><a href="dot-plots.html#cb45-7" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb45-8"><a href="dot-plots.html#cb45-8" tabindex="-1"></a>  <span class="co"># Reorder the labels by proportion &#39;das&#39;</span></span>
-<span id="cb45-9"><a href="dot-plots.html#cb45-9" tabindex="-1"></a>  <span class="co"># (Run the code with decreasing = FALSE so see what changes)</span></span>
-<span id="cb45-10"><a href="dot-plots.html#cb45-10" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb45-11"><a href="dot-plots.html#cb45-11" tabindex="-1"></a>    <span class="at">word_label =</span> <span class="fu">reorder</span>(word_label, NeuterResponses),</span>
-<span id="cb45-12"><a href="dot-plots.html#cb45-12" tabindex="-1"></a>    <span class="at">dutch_label =</span> <span class="fu">reorder</span>(dutch_label, NeuterResponses, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb45-13"><a href="dot-plots.html#cb45-13" tabindex="-1"></a>    <span class="at">german_label =</span> <span class="fu">reorder</span>(german_label, NeuterResponses, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb45-14"><a href="dot-plots.html#cb45-14" tabindex="-1"></a>  )</span>
-<span id="cb45-15"><a href="dot-plots.html#cb45-15" tabindex="-1"></a></span>
-<span id="cb45-16"><a href="dot-plots.html#cb45-16" tabindex="-1"></a><span class="fu">ggplot</span>(dat,</span>
-<span id="cb45-17"><a href="dot-plots.html#cb45-17" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> NeuterResponses,</span>
-<span id="cb45-18"><a href="dot-plots.html#cb45-18" tabindex="-1"></a>           <span class="at">y =</span> word_label,</span>
-<span id="cb45-19"><a href="dot-plots.html#cb45-19" tabindex="-1"></a>           <span class="at">shape =</span> Country)) <span class="sc">+</span></span>
-<span id="cb45-20"><a href="dot-plots.html#cb45-20" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb45-21"><a href="dot-plots.html#cb45-21" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proportion of neuter (das) choices&quot;</span>) <span class="sc">+</span></span>
-<span id="cb45-22"><a href="dot-plots.html#cb45-22" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;German noun (Dutch cognate)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb45-23"><a href="dot-plots.html#cb45-23" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)) <span class="sc">+</span></span>
-<span id="cb45-24"><a href="dot-plots.html#cb45-24" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(dutch_label, german_label),</span>
-<span id="cb45-25"><a href="dot-plots.html#cb45-25" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>,</span>
-<span id="cb45-26"><a href="dot-plots.html#cb45-26" tabindex="-1"></a>             <span class="at">space =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
-<span id="cb45-27"><a href="dot-plots.html#cb45-27" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-50-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="dot-plots.html#cb46-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> dat <span class="sc">|&gt;</span> </span>
+<span id="cb46-2"><a href="dot-plots.html#cb46-2" tabindex="-1"></a>  <span class="co"># Clearer labels</span></span>
+<span id="cb46-3"><a href="dot-plots.html#cb46-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb46-4"><a href="dot-plots.html#cb46-4" tabindex="-1"></a>    <span class="at">word_label =</span> <span class="fu">paste0</span>(Stimulus, <span class="st">&quot; (&quot;</span>, DutchCognate, <span class="st">&quot;)&quot;</span>),</span>
+<span id="cb46-5"><a href="dot-plots.html#cb46-5" tabindex="-1"></a>    <span class="at">dutch_label =</span> <span class="fu">paste0</span>(<span class="st">&quot;Du.: &quot;</span>, DutchGender),</span>
+<span id="cb46-6"><a href="dot-plots.html#cb46-6" tabindex="-1"></a>    <span class="at">german_label =</span> <span class="fu">paste0</span>(<span class="st">&quot;Gm.: &quot;</span>, GermanGender)</span>
+<span id="cb46-7"><a href="dot-plots.html#cb46-7" tabindex="-1"></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb46-8"><a href="dot-plots.html#cb46-8" tabindex="-1"></a>  <span class="co"># Reorder the labels by proportion &#39;das&#39;</span></span>
+<span id="cb46-9"><a href="dot-plots.html#cb46-9" tabindex="-1"></a>  <span class="co"># (Run the code with decreasing = FALSE so see what changes)</span></span>
+<span id="cb46-10"><a href="dot-plots.html#cb46-10" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb46-11"><a href="dot-plots.html#cb46-11" tabindex="-1"></a>    <span class="at">word_label =</span> <span class="fu">reorder</span>(word_label, NeuterResponses),</span>
+<span id="cb46-12"><a href="dot-plots.html#cb46-12" tabindex="-1"></a>    <span class="at">dutch_label =</span> <span class="fu">reorder</span>(dutch_label, NeuterResponses, <span class="at">decreasing =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb46-13"><a href="dot-plots.html#cb46-13" tabindex="-1"></a>    <span class="at">german_label =</span> <span class="fu">reorder</span>(german_label, NeuterResponses, <span class="at">decreasing =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb46-14"><a href="dot-plots.html#cb46-14" tabindex="-1"></a>  )</span>
+<span id="cb46-15"><a href="dot-plots.html#cb46-15" tabindex="-1"></a></span>
+<span id="cb46-16"><a href="dot-plots.html#cb46-16" tabindex="-1"></a><span class="fu">ggplot</span>(dat,</span>
+<span id="cb46-17"><a href="dot-plots.html#cb46-17" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> NeuterResponses,</span>
+<span id="cb46-18"><a href="dot-plots.html#cb46-18" tabindex="-1"></a>           <span class="at">y =</span> word_label,</span>
+<span id="cb46-19"><a href="dot-plots.html#cb46-19" tabindex="-1"></a>           <span class="at">shape =</span> Country)) <span class="sc">+</span></span>
+<span id="cb46-20"><a href="dot-plots.html#cb46-20" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb46-21"><a href="dot-plots.html#cb46-21" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Proportion of neuter (das) choices&quot;</span>) <span class="sc">+</span></span>
+<span id="cb46-22"><a href="dot-plots.html#cb46-22" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;German noun (Dutch cognate)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb46-23"><a href="dot-plots.html#cb46-23" tabindex="-1"></a>  <span class="fu">scale_shape_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>)) <span class="sc">+</span></span>
+<span id="cb46-24"><a href="dot-plots.html#cb46-24" tabindex="-1"></a>  <span class="fu">facet_grid</span>(<span class="at">rows =</span> <span class="fu">vars</span>(dutch_label, german_label),</span>
+<span id="cb46-25"><a href="dot-plots.html#cb46-25" tabindex="-1"></a>             <span class="at">scales =</span> <span class="st">&quot;free_y&quot;</span>,</span>
+<span id="cb46-26"><a href="dot-plots.html#cb46-26" tabindex="-1"></a>             <span class="at">space =</span> <span class="st">&quot;free_y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb46-27"><a href="dot-plots.html#cb46-27" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-51-1.png" alt="" width="672" /></p>
 <p>The versatility and usefulness of dotplots in linguistics
 is highlighted by <span class="citation">Sönning (<a href="#ref-Soenning2016">2016</a>)</span>. Another useful introduction
 is <span class="citation">Jacoby (<a href="#ref-Jacoby2006">2006</a>)</span>.</p>
@@ -497,8 +497,8 @@ This data set contains 4 columns:</p>
 accuracy between 10th and 11th grade. Moreover, accuracy is higher
 for the ‘fixed’ prepositions than for the ‘Wechselpräpositionen’.
 (This is slightly clearer in the second graph, I think.)</p>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-52-1.png" alt="" width="288" /></p>
-<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-53-1.png" alt="" width="432" /></p>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-53-1.png" alt="" width="288" /></p>
+<p><img src="BookletMethodology_files/figure-html/unnamed-chunk-54-1.png" alt="" width="432" /></p>
 <p><strong>Your task:</strong> Draw <em>both</em> graphs yourself. Hand in the compiled HTML report.</p>
 
 </div>
